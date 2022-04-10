@@ -1,5 +1,9 @@
 <aura:component>
-    <c:header/>
+    <header>
+        <c:header/>
+    </header>
     
-    <c:footer/>
+    <footer>
+        <c:footer/>
+    </footer>
 </aura:component>	

@@ -1,3 +1,8 @@
 <aura:component>
-
+    <div class="block">
+        <div class="block-item"><lightning:button label="Home" title="Home" onclick="{! c.home }"/></div>
+        <div class="block-item"><lightning:button label="Dealers" title="Dealers" onclick="{! c.dealers }"/></div>
+        <div class="block-item"><lightning:button label="Products" title="Products" onclick="{! c.products }"/></div>
+        <div class="block-item"><lightning:button label="TestDrive" title="Test-drive" onclick="{! c.testDrive }"/></div>
+    </div>
 </aura:component>	

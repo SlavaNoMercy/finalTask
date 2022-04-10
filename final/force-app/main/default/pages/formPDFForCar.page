@@ -1,0 +1,55 @@
+<apex:page controller="LadaCarController" applyHtmlTag="false" showHeader="false" renderAs="pdf">
+    <html>
+        <head>
+            <style>
+                *{
+                    box-sizing: border-box;
+                }
+
+                .heading {
+                font-weight: bold;
+                }
+                
+                .heading--main {
+                font-size: 36px;
+                }
+                
+                .heading--sub {
+                font-size: 21px;
+                }
+                
+                .box--half {
+                float: left;
+                width: 50%;
+                }             
+            </style>
+        </head>
+        <body>
+            <apex:image id="theImage" value="{!$Resource.faviconLada}" width="100" height="100"/>
+            <h1 class="heading heading--main">Lada</h1>
+            <br/>
+            <div class="box--half">
+                <h2 class="heading heading--sub">Car:</h2>
+                <span>Model</span>
+                <br/>
+                <span>Complectation 1</span>
+                <br/>
+                <span>Complectation 2</span>
+                <br/>
+                <span>Complectation 3</span>
+                <br/>
+            </div>
+            <div class="box--half">
+                <h2 class="heading heading--sub">Price:</h2>
+                <span></span>
+                <br/>
+                <span>Price 1</span>
+                <br/>
+                <span>Price 2</span>
+                <br/>
+                <span>Price 3</span>
+                <br/>
+            </div>
+        </body>
+    </html>
+</apex:page>

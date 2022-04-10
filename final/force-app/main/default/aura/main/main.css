@@ -1,2 +1,12 @@
 .THIS {
+    font-family: sans-serif;
+}
+header.THIS{
+    width: 100%;
+    height: 10%;
+}
+footer.THIS{
+    width: 100%;
+    height: 10%;
+    background-color: black;
 }
