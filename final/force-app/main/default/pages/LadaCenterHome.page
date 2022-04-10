@@ -1,12 +1,12 @@
-<apex:page standardController='Contact'>        
-    <apex:includeLightning />
+<apex:page applyHtmlTag="false" showHeader="false">        
+    <apex:includeLightning/>
     <div id='main'/>
     <script>
-        $Lightning.use(“c:my”, function() {
-            $Lightning.createComponent(
-                “c:main,
+        $Lightning.use("c:my", function() {
+            $Lightning.createComponent("aura:component",
+                "c:main",
                 function(cmp) {
-                    console.log(“Component is created!”);
+                    console.log("Component is created!");
                     console.log(cmp);
                 });
             });        

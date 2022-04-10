@@ -2,7 +2,7 @@
     <header>
         <c:header/>
     </header>
-    
+    <c:productList/>
     <footer>
         <c:footer/>
     </footer>

@@ -1,3 +1,13 @@
-<aura:component>
-
-</aura:component>	
+<aura:component controller="CarListController">
+    <aura:attribute name="cars" type="Product2[]"/>
+    <aura:handler name="init" action="{!c.doInit}" value="{!this}"/>
+    <lightning:card title="Cars">
+        <div class="slds-grid slds-grid_vertical">    
+                <aura:iteration items="{!v.cars}" var="car">
+                    <div class="slds-col">
+                        <c:product car="{!car}"/>
+                    </div>
+                </aura:iteration>
+            </div>
+    </lightning:card>
+</aura:component>
