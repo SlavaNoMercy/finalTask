@@ -1,3 +1,3 @@
-<aura:application access="GLOBAL" extends="ltng:outApp">
+<aura:application extends="ltng:outApp" access="global">
     <aura:dependency resource="c:main"/>
-</aura:application>	
+</aura:application>

@@ -1,23 +1,25 @@
 <aura:component>
-    <lightning:layout horizontalAlign="space" class="slds-page-header slds-page-header--object-home">
+    <lightning:layout pullToBoundary="medium" class="slds-page-header slds-page-header--object-home">
         <lightning:layoutItem>
             <lightning:icon iconName="action:goal" alternativeText="My Camping"/>
         </lightning:layoutItem>
-        <!--<lightning:layoutItem padding="around-small">-->
-        <!--  <div class="page-section page-header"> -->
                 <lightning:layoutItem padding="around-small">
                     <lightning:button label="Home" title="Home" onclick="{! c.home }"/>
                 </lightning:layoutItem>
                 <lightning:layoutItem padding="around-small">
                     <lightning:button label="Dealers" title="Dealers" onclick="{! c.dealers }"/>
                 </lightning:layoutItem>
+        		<lightning:layoutItem padding="around-small">
+                    <lightning:button label="Services" title="Services" onclick="{! c.services }"/>
+                </lightning:layoutItem>
                 <lightning:layoutItem padding="around-small">
                     <lightning:button label="Products" title="Products" onclick="{! c.products }"/>
                 </lightning:layoutItem>
+        		<lightning:layoutItem padding="around-small">
+                    <lightning:button label="Ask a Question" title="Question" onclick="{! c.question }"/>
+                </lightning:layoutItem>
                 <lightning:layoutItem padding="around-small">
                     <lightning:button label="TestDrive" title="Test-drive" onclick="{! c.testDrive }"/>
-                </lightning:layoutItem>
-        <!--    </div> -->
-        <!--</lightning:layoutItem>-->
+                </lightning:layoutItem> 
     </lightning:layout>    
-</aura:component>	
+</aura:component>

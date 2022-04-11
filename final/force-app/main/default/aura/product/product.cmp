@@ -1,8 +1,8 @@
 <aura:component>
     <aura:attribute name="car" type="Product2"/>
-    <lightning:card title="Car Info">
-        <dl class="slds-dl_horizontal">
-            <div class="slds-region_narrow" style="width:360px">
+    <!--<lightning:card title="Car Info">-->
+        <dl class="item">
+            <div class="slds-region_narrow" style="width:580px">
                 <dl class="slds-dl_inline">
                     <dt class="slds-dl_inline__label">Name:</dt>
                     <dd class="slds-dl_inline__detail">{!v.car.Name}</dd>
@@ -13,5 +13,5 @@
                 </dl>
               </div>
         </dl>
-    </lightning:card>
-</aura:component>	
+    <!--</lightning:card>-->
+</aura:component>
