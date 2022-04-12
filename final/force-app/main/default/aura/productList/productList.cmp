@@ -1,11 +1,11 @@
 <aura:component controller="CarListController">
-    <aura:attribute name="cars" type="Product2[]"/>
-    <aura:handler name="init" action="{!c.doInit}" value="{!this}"/>
-        <div class="container">    
-                <aura:iteration items="{!v.cars}" var="car">
-                    <lightning:layout multipleRows="true" class="layoutBigCardsColumn">
-                            <c:product car="{!car}"/>
-                    </lightning:layout>
-                </aura:iteration>
-            </div>
+  <aura:attribute name="cars" type="Product2[]" />
+  <aura:handler name="init" action="{!c.doInit}" value="{!this}" />
+  <div class="container">
+    <aura:iteration items="{!v.cars}" var="car">
+      <lightning:layout multipleRows="true" class="layoutBigCardsColumn">
+        <c:product car="{!car}" />
+      </lightning:layout>
+    </aura:iteration>
+  </div>
 </aura:component>
