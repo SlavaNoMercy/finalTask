@@ -1,0 +1,37 @@
+<aura:component controller="ServicesController">
+  <aura:attribute name="services" type="Car_Center__c[]" />
+  <aura:handler name="init" action="{!c.doInit}" value="{!this}" />
+  <div class="left-side-bar">
+    <aura:iteration items="{!v.services}" var="service">
+      <lightning:layout
+        multipleRows="true"
+        class="layoutBigCardsColumn"
+        pullToBoundary="medium"
+      >
+        <lightning:layoutItem flexibility="auto" padding="horizontal-medium">
+          <div class="custom-box">
+            <p class="title">{!service.Name}</p>
+          </div>
+        </lightning:layoutItem>
+        <lightning:layoutItem flexibility="auto" padding="horizontal-medium">
+          <div class="custom-box">
+            <p>{!service.Address__c}</p>
+          </div>
+        </lightning:layoutItem>
+        <lightning:layoutItem flexibility="auto" padding="horizontal-medium">
+          <div class="custom-box">
+            <p>{!service.Contact_Number__c}</p>
+          </div>
+        </lightning:layoutItem>
+        <lightning:layoutItem flexibility="auto" padding="horizontal-medium">
+          <div class="custom-box">
+            <p>{!service.Working_Hours__c}</p>
+          </div>
+        </lightning:layoutItem>
+      </lightning:layout>
+    </aura:iteration>
+  </div>
+  <div class="right-side-bar">
+    <c:map />
+  </div>
+</aura:component>
