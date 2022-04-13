@@ -9,7 +9,7 @@
         pullToBoundary="medium"
       >
         <lightning:layoutItem flexibility="auto" padding="horizontal-medium">
-          <div class="custom-box">
+          <div class="custom-box" onclick="" style="cursor: pointer">
             <p class="title">{!service.Name}</p>
           </div>
         </lightning:layoutItem>
@@ -32,6 +32,6 @@
     </aura:iteration>
   </div>
   <div class="right-side-bar">
-    <c:map />
+    <c:mapForLada />
   </div>
 </aura:component>

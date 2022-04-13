@@ -1,9 +1,10 @@
 <aura:component implements="forceCommunity:availableForAllPageTypes">
-  <!--<header>
-        <c:header/>
-    </header>-->
+  <header>
+    <c:header />
+  </header>
+  <c:services />
   <c:productList />
-  <!--<footer>
-        <c:footer/>
-    </footer>-->
+  <footer>
+    <c:footer />
+  </footer>
 </aura:component>

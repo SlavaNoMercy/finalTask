@@ -1,17 +1,15 @@
 <aura:component>
-    <aura:attribute name="car" type="Product2"/>
-    <!--<lightning:card title="Car Info">-->
-        <dl class="item">
-            <div class="slds-region_narrow" style="width:580px">
-                <dl class="slds-dl_inline">
-                    <dt class="slds-dl_inline__label">Name:</dt>
-                    <dd class="slds-dl_inline__detail">{!v.car.Name}</dd>
-                    <dt class="slds-dl_inline__label">Product Code:</dt>
-                    <dd class="slds-dl_inline__detail">{!v.car.ProductCode}</dd>
-                    <dt class="slds-dl_inline__label">Family</dt>
-                    <dd class="slds-dl_inline__detail">{!v.car.Family}</dd>
-                </dl>
-              </div>
-        </dl>
-    <!--</lightning:card>-->
+  <aura:attribute name="car" type="Product2" />
+  <dl class="item">
+    <div class="slds-region_narrow" style="width: 580px">
+      <dl class="slds-dl_inline">
+        <dt class="slds-dl_inline__label">Name:</dt>
+        <dd class="slds-dl_inline__detail">{!v.car.Name}</dd>
+        <dt class="slds-dl_inline__label">Product Code:</dt>
+        <dd class="slds-dl_inline__detail">{!v.car.ProductCode}</dd>
+        <dt class="slds-dl_inline__label">Family</dt>
+        <dd class="slds-dl_inline__detail">{!v.car.Family}</dd>
+      </dl>
+    </div>
+  </dl>
 </aura:component>

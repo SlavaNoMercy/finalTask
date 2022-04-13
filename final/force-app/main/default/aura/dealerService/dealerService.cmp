@@ -1,3 +1,0 @@
-<aura:component>
-  <aura:attribute name="dealer" type="Car_Center__c" />
-</aura:component>
