@@ -1,2 +1,7 @@
 .THIS {
+  background-color: aquamarine;
+}
+
+div.THIS {
+  align-self: center;
 }

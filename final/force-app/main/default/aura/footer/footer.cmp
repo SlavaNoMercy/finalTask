@@ -1,3 +1,7 @@
-<aura:component>
-
+<aura:component implements="forceCommunity:availableForAllPageTypes">
+  <div>
+    <a href="https://github.com/SlavaNoMercy/finalTask/tree/master/final"
+      >Code at Github</a
+    >
+  </div>
 </aura:component>

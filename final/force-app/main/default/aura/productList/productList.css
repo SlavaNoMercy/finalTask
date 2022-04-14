@@ -3,13 +3,11 @@
 
 .THIS.container {
   width: 100%;
-  padding: 10px;
-  margin: 5px;
   list-style: none;
   -ms-box-orient: horizontal;
   border: 1px solid silver;
+  border-left: none;
   display: flex;
   flex-wrap: wrap;
-  background-image: url("https://senla8-dev-ed--c.visualforce.com/resource/1649704118000/bgimagelada");
   background-size: contain;
 }

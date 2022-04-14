@@ -1,10 +1,11 @@
 <aura:component implements="forceCommunity:availableForAllPageTypes">
-  <header>
-    <c:header />
-  </header>
-  <c:services />
-  <c:productList />
-  <footer>
-    <c:footer />
-  </footer>
+  <div class="content">
+    <div class="services">
+      <c:testDrive />
+      <c:services />
+    </div>
+    <div class="products">
+      <c:productList />
+    </div>
+  </div>
 </aura:component>

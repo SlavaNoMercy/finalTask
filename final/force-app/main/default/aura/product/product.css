@@ -1,8 +1,9 @@
 .THIS {
 }
 
-.THIS.item{
-    margin:5px;
-    padding:20px;
-    background: rgba(255,255,255,0.9);
+.THIS.item {
+  border-radius: 25px;
+  margin: 5px;
+  padding: 20px;
+  background: rgba(218, 216, 240, 0.9);
 }
