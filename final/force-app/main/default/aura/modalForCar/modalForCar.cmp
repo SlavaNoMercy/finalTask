@@ -1,4 +1,4 @@
-<aura:component>
+<aura:component implements="forceCommunity:availableForAllPageTypes">
   <aura:attribute name="isModalOpen" type="boolean" default="false" />
   <aura:attribute name="car" type="Product2" />
   <div class="slds-m-around_xx-large">
@@ -51,8 +51,8 @@
             />
             <lightning:button
               variant="brand"
-              label="OK"
-              title="OK"
+              label="ViewPDF"
+              title="Veiw PDF"
               onclick="{!c.submitDetails}"
             />
           </footer>

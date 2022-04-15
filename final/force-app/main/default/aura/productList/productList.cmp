@@ -1,4 +1,7 @@
-<aura:component controller="CarListController">
+<aura:component
+  controller="CarListController"
+  implements="forceCommunity:availableForAllPageTypes"
+>
   <aura:attribute name="cars" type="Product2[]" />
   <aura:handler name="init" action="{!c.doInit}" value="{!this}" />
   <div class="container">

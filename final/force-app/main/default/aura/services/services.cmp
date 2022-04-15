@@ -1,34 +1,77 @@
-<aura:component controller="ServicesController">
+<aura:component
+  controller="ServicesController"
+  implements="forceCommunity:availableForAllPageTypes"
+>
   <aura:attribute name="services" type="Car_Center__c[]" />
+  <aura:attribute name="isModalOpen" type="boolean" default="false" />
   <aura:handler name="init" action="{!c.doInit}" value="{!this}" />
   <div class="left-side-bar">
     <aura:iteration items="{!v.services}" var="service">
-      <lightning:layout
-        multipleRows="true"
-        class="layoutBigCardsColumn"
-        pullToBoundary="medium"
-      >
-        <lightning:layoutItem flexibility="auto" padding="horizontal-medium">
-          <div class="custom-box" onclick="" style="cursor: pointer">
-            <p class="title">{!service.Name}</p>
-          </div>
-        </lightning:layoutItem>
-        <lightning:layoutItem flexibility="auto" padding="horizontal-medium">
-          <div class="custom-box">
-            <p>{!service.Address__c}</p>
-          </div>
-        </lightning:layoutItem>
-        <lightning:layoutItem flexibility="auto" padding="horizontal-medium">
-          <div class="custom-box">
-            <p>{!service.Contact_Number__c}</p>
-          </div>
-        </lightning:layoutItem>
-        <lightning:layoutItem flexibility="auto" padding="horizontal-medium">
-          <div class="custom-box">
-            <p>{!service.Working_Hours__c}</p>
-          </div>
-        </lightning:layoutItem>
-      </lightning:layout>
+      <div class="slds-m-around_xx-large">
+        <lightning:button
+          class=""
+          variant="neutral"
+          label="{!service.Name}"
+          title="{!service.Name}"
+          onclick="{! c.openModel }"
+        />
+        <aura:if isTrue="{!v.isModalOpen}">
+          <section
+            role="dialog"
+            tabindex="-1"
+            aria-labelledby="modal-heading-01"
+            aria-modal="true"
+            aria-describedby="modal-content-id-1"
+            class="slds-modal slds-fade-in-open"
+          >
+            <div class="slds-modal__container">
+              <header class="slds-modal__header">
+                <lightning:buttonIcon
+                  iconName="utility:close"
+                  onclick="{! c.closeModel }"
+                  alternativeText="close"
+                  variant="bare-inverse"
+                  class="slds-modal__close"
+                />
+                <h2
+                  id="modal-heading-01"
+                  class="slds-text-heading_medium slds-hyphenate"
+                >
+                  {!service.Name}
+                </h2>
+              </header>
+              <div
+                class="slds-modal__content slds-p-around_medium"
+                id="modal-content-id-1"
+              >
+                <p>Address: {!service.Address__c}</p>
+                <p>Number: {!service.Contact_Number__c}</p>
+                <p>{!service.Working_Hours__c}</p>
+                <aura:if
+                  isTrue="{!v.service.RecordTypeId=='0125j000000UIT1AAO'}"
+                >
+                  <p>{!service.Description__c}</p>
+                </aura:if>
+              </div>
+              <footer class="slds-modal__footer">
+                <lightning:button
+                  variant="neutral"
+                  label="Cancel"
+                  title="Cancel"
+                  onclick="{! c.closeModel }"
+                />
+                <lightning:button
+                  variant="brand"
+                  label="OK"
+                  title="OK"
+                  onclick="{!c.submitDetails}"
+                />
+              </footer>
+            </div>
+          </section>
+          <div class="slds-backdrop slds-backdrop_open"></div>
+        </aura:if>
+      </div>
     </aura:iteration>
   </div>
   <div class="right-side-bar">
