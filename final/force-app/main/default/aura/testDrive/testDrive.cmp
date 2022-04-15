@@ -1,24 +1,25 @@
 <aura:component
   implements="forceCommunity:availableForAllPageTypes"
-  controller="LadaCaseController"
+  controller="LadaLeadController"
 >
   <aura:attribute
-    name="newCase"
-    type="Case"
-    default="{ 'sobjectType': 'Case',
-                     'Subject': '',
-                     'Origin': 'Web',
-                     'Status': 'New',
-					           'SuppliedEmail':'',
+    name="newLead"
+    type="Lead"
+    default="{ 'sobjectType': 'Lead',
+                     'Company': 'none',
+                     'LastName': '',
+                     'LeadSource': 'Web',
+                     'Status': 'Open - Not Contacted',
+					           'Email':'',
              		     'Description':''
                    }"
   />
   <aura:attribute name="isModalOpen" type="boolean" default="false" />
   <div class="slds-m-around_xx-large">
     <lightning:button
-      variant="neutral"
-      label="Details"
-      title="Details"
+      variant="brand"
+      label="TestDrive"
+      title="Test-drive"
       onclick="{! c.openModel }"
     />
     <aura:if isTrue="{!v.isModalOpen}">
@@ -47,7 +48,7 @@
                 id="newCampaingForm"
                 class="slds-text-heading--small slds-p-vertical--medium"
               >
-                Have a Question?
+                Test-drive
               </legend>
             </h2>
           </header>
@@ -60,7 +61,16 @@
                 aura:id="subject"
                 label="Subject"
                 name="Subject"
-                value="{!v.newCase.Subject}"
+                value="{!v.newLead.Subject}"
+                required="true"
+              />
+            </p>
+            <p>
+              <lightning:input
+                aura:id="lastname"
+                label="LastName"
+                name="LastName"
+                value="{!v.newLead.LastName}"
                 required="true"
               />
             </p>
@@ -69,7 +79,7 @@
                 aura:id="email"
                 type="Email"
                 name="Email"
-                value="{!v.newCase.SuppliedEmail}"
+                value="{!v.newLead.Email}"
                 placeholder="youraddress@company.com"
                 label="Email"
               />
@@ -80,7 +90,7 @@
                 name="Description"
                 label="Description"
                 placeholder="type here description..."
-                value="{!v.newCase.Description}"
+                value="{!v.newLead.Description}"
               />
             </p>
           </div>
@@ -95,7 +105,7 @@
               variant="brand"
               label="OK"
               title="OK"
-              onclick="{!c.submitDetails}"
+              onclick="{!c.createLead}"
             />
           </footer>
         </div>

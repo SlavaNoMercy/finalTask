@@ -1,8 +1,8 @@
 ({
-  createCase: function (component, caseStr) {
-    let action = component.get("c.LadaCaseController");
+  createLead: function (component, leadStr) {
+    let action = component.get("c.saveLead");
     action.setParams({
-      case: caseStr
+      Lead: leadStr
     });
 
     $A.enqueueAction(action);

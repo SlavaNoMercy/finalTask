@@ -12,16 +12,14 @@ global class BatchUpdateExchangeRate implements Database.Batchable<sObject>, Sch
     }
     
     global void execute(Database.BatchableContext bc, List<PricebookEntry> priceBooks){
-    	//Forming request to bank to get exchange rates
         Http http = new Http();
         HttpRequest req = new HttpRequest();
         req.setEndpoint('https://belarusbank.by/api/kursExchange');
 		req.setMethod('GET');
         HttpResponse res = http.send(req);
-        //Analyze results
+        
 		Map<String,Map<String,String>> exchangeRates = (Map<String, Map<String,String>>) JSON.deserializeUntyped(res.getBody());        
         Map<String,String> actualCources = exchangeRates.get('0');
-        //Math
         Double realPrice;
         Double rubleCost;
         PriceBookEntry rub;
@@ -39,7 +37,6 @@ global class BatchUpdateExchangeRate implements Database.Batchable<sObject>, Sch
     }
     
     global void finish(Database.BatchableContext bc){
-        // execute any post-processing operations
     }
     
     global void execute(SchedulableContext ctx) {

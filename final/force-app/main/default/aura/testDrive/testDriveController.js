@@ -7,18 +7,32 @@
     component.set("v.isModalOpen", false);
   },
 
-  createCase: function (component, event, helper) {
-    let newCase = component.get("v.newCase");
+  createLead: function (component, event, helper) {
+    let newLead = component.get("v.newLead");
 
     let subjectField = component.find("subject");
-    newCase.subject = subjectField.get("v.value");
+    newLead.subject = subjectField.get("v.value");
 
     let emailField = component.find("email");
-    newCase.suppliedEmail = emailField.get("v.value");
+    newLead.suppliedEmail = emailField.get("v.value");
 
     let descriptionField = component.find("description");
-    newCase.description = descriptionField.get("v.value");
+    newLead.description = descriptionField.get("v.value");
 
-    helper.createCase(component, JSON.stringify(newCase));
+    let status = component.get("v.newLead.Status");
+    newLead.Status = status;
+
+    let lastNameField = component.find("lastname");
+    newLead.LastName = lastNameField.get("v.value");
+
+    let company = component.get("v.newLead.Company");
+    newLead.Company = company;
+
+    let source = component.get("v.newLead.LeadSource");
+    newLead.LeadSource = source;
+
+    helper.createLead(component, JSON.stringify(newLead));
+    console.log(JSON.stringify(newLead));
+    component.set("v.isModalOpen", false);
   }
 });

@@ -1,6 +1,7 @@
 <aura:component implements="forceCommunity:availableForAllPageTypes">
   <div class="content">
     <div class="services">
+      <c:questionComponent />
       <c:testDrive />
       <c:services />
     </div>
