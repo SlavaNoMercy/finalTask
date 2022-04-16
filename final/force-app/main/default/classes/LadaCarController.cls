@@ -1,4 +1,4 @@
-public with sharing class LadaCarController {
+public without sharing class LadaCarController {
     public LadaCarController() {
 
     }

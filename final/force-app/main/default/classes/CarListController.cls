@@ -1,4 +1,4 @@
-public with sharing class CarListController {
+public without sharing class CarListController {
     @AuraEnabled
     public static List<Product2> getProduct() {
         // Perform isAccessible() checking first, then

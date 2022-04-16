@@ -1,7 +1,7 @@
-<apex:page showheader = "false">        
+<apex:page showheader="false" standardStylesheets="false"> 
+    <apex:slds />
     <apex:includeLightning />
-    <div id='main'>
-        
+    <div id='main'>        
     </div>
     <script>
         $Lightning.use("c:my", function() {

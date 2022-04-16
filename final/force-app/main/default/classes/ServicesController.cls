@@ -1,4 +1,4 @@
-public with sharing class ServicesController {
+public without sharing class ServicesController {
     @AuraEnabled
     public static List<Car_Center__c> getServices() {
         return [SELECT Id,Name,Address__c,Contact_Number__c,

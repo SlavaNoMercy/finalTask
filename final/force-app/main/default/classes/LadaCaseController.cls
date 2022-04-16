@@ -1,4 +1,4 @@
-public class LadaCaseController {
+public without sharing class LadaCaseController {
 	@AuraEnabled
 	public static String saveCase(String caseJSON) {
     	try{
