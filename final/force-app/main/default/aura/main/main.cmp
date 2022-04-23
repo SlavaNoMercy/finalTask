@@ -1,12 +1,25 @@
 <aura:component implements="forceCommunity:availableForAllPageTypes">
-  <div class="content">
-    <div class="services">
-      <c:questionComponent />
-      <c:testDrive />
-      <c:services />
-    </div>
-    <div class="products">
-      <c:productList />
-    </div>
-  </div>
+  <aura:attribute name="renderedCmp" type="String" default="products" />
+  <aura:handler
+    name="cmpEvent"
+    event="c:componentEvent"
+    action="{!c.handleComponentEvent}"
+  />
+  <c:header />
+  <aura:renderIf isTrue="{!v.renderedCmp=='home'}">
+    <c:home />
+  </aura:renderIf>
+  <aura:renderIf isTrue="{!v.renderedCmp=='services'}">
+    <c:services />
+  </aura:renderIf>
+  <aura:renderIf isTrue="{!v.renderedCmp=='cars'}">
+    <c:productList />
+  </aura:renderIf>
+  <aura:renderIf isTrue="{!v.renderedCmp=='question'}">
+    <c:questionComponent />
+  </aura:renderIf>
+  <aura:renderIf isTrue="{!v.renderedCmp=='testDrive'}">
+    <c:testDrive />
+  </aura:renderIf>
+  <c:footer />
 </aura:component>

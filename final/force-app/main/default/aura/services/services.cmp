@@ -5,6 +5,7 @@
   <aura:attribute name="services" type="Car_Center__c[]" />
   <aura:attribute name="isModalOpen" type="boolean" default="false" />
   <aura:handler name="init" action="{!c.doInit}" value="{!this}" />
+  <c:mapForLada />
   <div class="left-side-bar">
     <aura:iteration items="{!v.services}" var="service">
       <div class="slds-m-around_xx-large">
@@ -73,8 +74,5 @@
         </aura:if>
       </div>
     </aura:iteration>
-  </div>
-  <div class="right-side-bar">
-    <c:mapForLada />
   </div>
 </aura:component>

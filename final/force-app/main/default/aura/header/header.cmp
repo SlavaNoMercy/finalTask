@@ -1,4 +1,5 @@
 <aura:component implements="forceCommunity:availableForAllPageTypes">
+  <aura:registerEvent name="cmpEvent" type="c:ComponentEvent" />
   <lightning:layout
     pullToBoundary="medium"
     class="slds-page-header slds-page-header--object-home"
@@ -10,10 +11,28 @@
       <lightning:button label="Home" title="Home" onclick="{! c.home }" />
     </lightning:layoutItem>
     <lightning:layoutItem padding="around-small">
-      <c:questionComponent />
+      <lightning:button label="Cars" title="Cars" onclick="{! c.cars }" />
     </lightning:layoutItem>
     <lightning:layoutItem padding="around-small">
-      <c:testDrive />
+      <lightning:button
+        label="Services"
+        title="Services"
+        onclick="{! c.services }"
+      />
+    </lightning:layoutItem>
+    <lightning:layoutItem padding="around-small">
+      <lightning:button
+        label="Question"
+        title="question"
+        onclick="{! c.question }"
+      />
+    </lightning:layoutItem>
+    <lightning:layoutItem padding="around-small">
+      <lightning:button
+        label="testDrive"
+        title="Test Drive"
+        onclick="{! c.testDrive }"
+      />
     </lightning:layoutItem>
   </lightning:layout>
 </aura:component>
