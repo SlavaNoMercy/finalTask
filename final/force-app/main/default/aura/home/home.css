@@ -1,2 +1,38 @@
 .THIS {
 }
+
+div.cmp-container.cHome.cMain {
+  padding: 60px 90px 0px;
+  display: table;
+}
+
+div.cmp-container.cHome.cMain div {
+  display: table-cell;
+  padding: 10px;
+  width: 50%;
+  height: auto;
+  bottom: 80px;
+  position: relative;
+}
+
+div.cmp-container.cHome.cMain img {
+  display: table-cell;
+  width: auto;
+  height: auto;
+}
+
+div.cmp-container.cHome.cMain div p {
+  justify-content: start;
+  bottom: 50px;
+  font-size: larger;
+  color: #000;
+}
+div.cmp-container.cHome.cMain div h2 {
+  text-align: center;
+  margin: 1em 0 0.5em 0;
+  color: #343434;
+  font-weight: normal;
+  font-size: 30px;
+  line-height: 40px;
+  font-family: "Orienta", sans-serif;
+}

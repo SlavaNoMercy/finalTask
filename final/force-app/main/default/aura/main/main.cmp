@@ -1,5 +1,5 @@
 <aura:component implements="forceCommunity:availableForAllPageTypes">
-  <aura:attribute name="renderedCmp" type="String" default="products" />
+  <aura:attribute name="renderedCmp" type="String" default="home" />
   <aura:handler
     name="cmpEvent"
     event="c:componentEvent"

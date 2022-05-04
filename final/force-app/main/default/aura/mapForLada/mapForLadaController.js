@@ -22,7 +22,16 @@
               },
               icon: "standard:account",
               title: service.Name,
-              description: completeAddress.join()
+              description:
+                "<p> Address: " +
+                service.Address__c +
+                "</p>" +
+                "<p> Phone: " +
+                service.Contact_Number__c +
+                "</p>" +
+                "<p> Working Hours: " +
+                service.Working_Hours__c +
+                "</p>"
             });
           }
           component.set("v.markersTitle", "All Service Locations");
@@ -33,6 +42,7 @@
               Longitude: "27.56046445640155"
             }
           });
+          component.set("v.listView", "hidden");
         }
       );
     } catch (e) {

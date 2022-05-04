@@ -1,5 +1,6 @@
 <aura:component controller="MapController">
   <aura:attribute name="mapMarkers" type="Object" />
+  <aura:attribute name="listView" type="String" />
   <aura:attribute name="markersTitle" type="String" />
   <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
   <aura:if isTrue="{!!empty(v.mapMarkers)}">
@@ -8,6 +9,7 @@
       markersTitle="{!v.markersTitle}"
       zoomLevel="11"
       center="{!v.center}"
+      listView="{!v.listView}"
     />
   </aura:if>
 </aura:component>

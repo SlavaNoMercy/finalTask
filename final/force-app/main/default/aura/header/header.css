@@ -1,9 +1,43 @@
 .THIS {
-    width: 100%;
 }
 
-.THIS.c-container{
-    border: 1px solid #d8dde6;
-    margin: 10px 0 20px 0;
-    padding-right: 30%;
+.THIS.c-container {
+  border: 1px solid #d8dde6;
+  margin: 10px 0 20px 0;
+}
+
+.THIS.slds-page-header {
+  justify-content: left;
+  background-color: none;
+}
+
+.cHeader.cMain {
+  background-color: rgb(255, 255, 255);
+}
+
+.cHeader.cMain div.slds-grid.slds-page-header.header-title {
+  width: fit-content;
+  background-color: #ffffff;
+}
+.cHeader.cMain div.slds-p-around_small {
+  display: flex;
+  align-items: center;
+}
+
+.cHeader.cMain div.slds-p-around_small button.slds-button.slds-button_neutral {
+  border: none;
+  font: medium;
+  padding: 3px 15px;
+  margin: 15px;
+  cursor: pointer;
+  border: 0px;
+  background-color: #ffffff;
+  font-size: 18px;
+  color: #797979;
+  box-shadow: 0 0 5px #ffffff;
+}
+.cHeader.cMain
+  div.slds-p-around_small
+  button.slds-button.slds-button_neutral:hover {
+  color: #000000;
 }

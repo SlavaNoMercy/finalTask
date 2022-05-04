@@ -1,18 +1,10 @@
 <aura:component implements="forceCommunity:availableForAllPageTypes">
   <aura:attribute name="car" type="Product2" />
-  <dl class="item">
-    <div class="slds-region_narrow" style="width: 400px">
-      <dl class="slds-dl_inline">
-        <dt class="slds-dl_inline__label">Name:</dt>
-        <dd class="slds-dl_inline__detail">{!v.car.Name}</dd>
-        <dt class="slds-dl_inline__label">Product Code:</dt>
-        <dd class="slds-dl_inline__detail">{!v.car.ProductCode}</dd>
-        <dt class="slds-dl_inline__label">Family</dt>
-        <dd class="slds-dl_inline__detail">{!v.car.Family}</dd>
-        <div>
-          <c:modalForCar car="{!v.car}" />
-        </div>
-      </dl>
-    </div>
-  </dl>
+  <div class="slds-region_narrow">
+    <p>{!v.car.Name}</p>
+    <img
+      src="https://senla8-dev-ed.my.salesforce.com/sfc/servlet.shepherd/document/download/p/5j00000AHFVr/a/5j000000IBeG/.zz8ROeMjsMBT8CMkgFtXI8S3aZZJP2py9B5ZQGbYls"
+    />
+    <c:modalForCar car="{!v.car}" />
+  </div>
 </aura:component>

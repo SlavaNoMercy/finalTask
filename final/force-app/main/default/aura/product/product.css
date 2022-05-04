@@ -2,8 +2,22 @@
 }
 
 .THIS.item {
-  border-radius: 25px;
   margin: 5px;
   padding: 20px;
-  background: rgba(218, 216, 240, 0.9);
+  background: rgba(255, 255, 255, 0.9);
+}
+
+div.slds-region_narrow.cProduct {
+  display: inline-block;
+  min-width: 300px;
+  max-width: 500px;
+}
+
+div.slds-region_narrow.cProduct p {
+  margin: 1em 0 0.5em 0;
+  color: #343434;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 30px;
+  font-family: "Orienta", sans-serif;
 }

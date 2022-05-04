@@ -2,12 +2,20 @@
 }
 
 .THIS.container {
-  width: 100%;
-  list-style: none;
-  -ms-box-orient: horizontal;
-  border: 1px solid silver;
-  border-left: none;
+  padding: 0px 50px 0px;
+  align-items: stretch;
   display: flex;
   flex-wrap: wrap;
-  background-size: contain;
+  justify-content: space-between;
+}
+
+h1.cProductList.cMain {
+  margin: 1em 0 0.5em 0;
+  color: #343434;
+  font-weight: normal;
+  font-family: "Ultra", sans-serif;
+  font-size: 36px;
+  line-height: 42px;
+  text-transform: uppercase;
+  text-align: center;
 }

@@ -1,7 +1,9 @@
 .THIS {
-  background-color: rgb(141, 236, 236);
 }
 
-div.THIS {
-  align-self: center;
+div.cFooter.cMain a.refStyle {
+  border: none;
+  outline: none;
+  text-decoration: none;
+  color: rgb(212, 212, 212);
 }

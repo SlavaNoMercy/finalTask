@@ -1,6 +1,6 @@
 ({
   callToServer: function (component, method, callback) {
-    let action = component.get(method);
+    const action = component.get(method);
     action.setCallback(this, function (response) {
       let state = response.getState();
       if (state === "SUCCESS") {

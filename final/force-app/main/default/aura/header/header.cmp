@@ -4,9 +4,16 @@
     pullToBoundary="medium"
     class="slds-page-header slds-page-header--object-home"
   >
-    <lightning:layoutItem>
-      <lightning:icon iconName="action:goal" alternativeText="My Camping" />
-    </lightning:layoutItem>
+    <lightning:layout class="slds-page-header header-title">
+      <div class="header-image">
+        <img
+          src="{!$Resource.faviconLada}"
+          alt="Responsive image"
+          width="80"
+          height="80"
+        />
+      </div>
+    </lightning:layout>
     <lightning:layoutItem padding="around-small">
       <lightning:button label="Home" title="Home" onclick="{! c.home }" />
     </lightning:layoutItem>
@@ -29,8 +36,8 @@
     </lightning:layoutItem>
     <lightning:layoutItem padding="around-small">
       <lightning:button
-        label="testDrive"
-        title="Test Drive"
+        label="Test-Drive"
+        title="testDrive"
         onclick="{! c.testDrive }"
       />
     </lightning:layoutItem>
