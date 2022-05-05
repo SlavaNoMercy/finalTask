@@ -43,7 +43,7 @@ public without sharing class LadaCarController {
 	// }
 
     @AuraEnabled
-    public static List<Product2> getCarsAllowedTestDrive(){
+    public static List<Product2> getActualCarList(){
         List<Product2> products = new List<Product2>();
         for (PriceBookEntry pbEntry : LadaQueryManager.getCarsListWithPrices('USD')) {
             Product2 aProduct = new Product2();

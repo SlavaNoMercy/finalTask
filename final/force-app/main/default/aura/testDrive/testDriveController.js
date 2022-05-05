@@ -37,7 +37,7 @@
   },
 
   doInit: function (component, event, helper) {
-    let action = component.get("c.getCarsAllowedTestDrive");
+    let action = component.get("c.getActualCarList");
     action.setCallback(this, function (response) {
       let state = response.getState();
       if (state === "SUCCESS") {

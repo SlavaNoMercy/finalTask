@@ -1,2 +1,75 @@
 .THIS {
 }
+
+form.cQuestionComponent.cMain {
+  align-self: center;
+  align-items: center;
+  padding: 100px 150px 100px;
+    
+}
+
+h1.cQuestionComponent.cMain {
+  color:black;
+  text-align: center;
+  font-size: 36px;
+}
+
+form.cQuestionComponent.cMain p {
+  width: 100%;
+  padding: 15px 5px 10px;
+}
+
+form.cQuestionComponent.cMain p label {
+  color: black;
+  font-size: 18px;
+  margin-left: 25px;
+}
+
+form.cQuestionComponent.cMain p input[type=text] {
+  margin-left: 20px;
+  width: max-content;
+  color: black;
+  font-size: 16px;
+  border: 1px solid black;
+  display: table;
+  padding: 4px;
+}
+
+form.cQuestionComponent.cMain div {
+  width: fit-content;
+  padding-left: 5px;
+}
+
+form.cQuestionComponent.cMain div label {
+  color: black;
+  font-size: 18px;
+  margin-bottom: 7px;
+  margin-left: 25px;
+}
+
+form.cQuestionComponent.cMain div select {
+  color: black;
+  width: fit-content;
+  font-size: 16px;
+  margin-left: 15px;
+}
+
+form.cQuestionComponent.cMain div div {
+  margin: 0px;
+  padding: 0px;
+}
+
+form.cQuestionComponent.cMain input[type=submit]{
+  margin-top: 50px;
+  border: 1px solid black;
+  border-radius: 3px;
+  font-size: 18px;
+  background-color: #ffffff;
+  color: black;
+  align-self: center;
+  width: fit-content;
+  margin: 30px 30px 10px;
+}
+form.cQuestionComponent.cMain input[type=submit]:hover {
+  color: rgb(62, 64, 65);
+}

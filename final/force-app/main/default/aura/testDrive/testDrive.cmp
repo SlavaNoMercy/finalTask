@@ -2,18 +2,6 @@
   implements="forceCommunity:availableForAllPageTypes"
   controller="LadaCarController"
 >
-  <aura:attribute
-    name="newLead"
-    type="Lead"
-    default="{ 'sobjectType': 'Lead',
-                     'Company': 'none',
-                     'LastName': '',
-                     'LeadSource': 'Web',
-                     'Status': 'Open - Not Contacted',
-					           'Email':'',
-             		     'ProductInterest__c':''
-                   }"
-  />
   <aura:attribute name="options" type="Product2[]" access="PRIVATE"/>
   <aura:attribute name="selectedValue" type="String" access="PRIVATE"/>
   <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
@@ -29,15 +17,15 @@
     <input type="hidden" name="title" value="Test-Drive" />
     <p><label for="first_name">First Name</label><input  id="first_name" maxlength="40" name="first_name" size="20" type="text" /></p>
     
-    <p><label for="last_name">Last Name</label><input  id="last_name" maxlength="80" name="last_name" size="20" type="text" /></p>
+    <p><label for="last_name">Last Name</label><input  id="last_name" maxlength="80" name="last_name" size="20" type="text" required="true" /></p>
     
-    <lightning:select name="colorId" label="Product Interest:" aura:id="colorId" value="{!v.selectedValue}">
+    <lightning:select name="carId" label="Product Interest:" aura:id="carId" value="{!v.selectedValue}">
       <aura:iteration items="{!v.options}" var="option">
           <option text="{!option.Name}" />
       </aura:iteration>
-  </lightning:select><br/>
+    </lightning:select><br/>
     
-    <p><label for="email">Email</label><input  id="email" maxlength="80" name="email" size="20" type="text" /></p>
+    <p><label for="email">Email</label><input  id="email" maxlength="80" name="email" size="20" type="text" required="true" /></p>
     
     <p><label for="phone">Phone</label><input  id="phone" maxlength="40" name="phone" size="20" type="text" /></p>
     

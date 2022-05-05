@@ -3,6 +3,7 @@
 
 form.cTestDrive.cMain {
   align-self: center;
+  align-items: center;
   padding: 100px 150px 100px;
     
 }
@@ -13,24 +14,61 @@ h1.cTestDrive.cMain {
   font-size: 36px;
 }
 
+form.cTestDrive.cMain p {
+    width: 100%;
+    padding: 15px 5px 10px;
+}
+
 form.cTestDrive.cMain p label {
   color: black;
   font-size: 18px;
+  margin-left: 25px;
 }
 
 form.cTestDrive.cMain p input[type=text] {
+  margin-left: 20px;
+  width: max-content;
+  color: black;
+  font-size: 16px;
+  border: 1px solid black;
+  display: table;
+  padding: 4px;
+}
 
+form.cTestDrive.cMain div {
+  width: fit-content;
+  padding-left: 5px;
+}
+
+form.cTestDrive.cMain div label {
+  color: black;
+  font-size: 18px;
+  margin-bottom: 7px;
+  margin-left: 25px;
+}
+
+form.cTestDrive.cMain div select {
+  color: black;
+  width: fit-content;
+  font-size: 16px;
+  margin-left: 15px;
+}
+
+form.cTestDrive.cMain div div {
+  margin: 0px;
+  padding: 0px;
 }
 
 form.cTestDrive.cMain input[type=submit]{
   margin-top: 50px;
   border: 1px solid black;
-  border-radius: 0px;
+  border-radius: 3px;
   font-size: 18px;
   background-color: #ffffff;
   color: black;
   align-self: center;
   width: fit-content;
+  margin: 30px 30px 10px;
 }
 form.cTestDrive.cMain input[type=submit]:hover {
   color: rgb(62, 64, 65);

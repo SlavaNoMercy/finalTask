@@ -28,5 +28,19 @@
     helper.createCase(component, JSON.stringify(newCase));
     console.log(JSON.stringify(newCase));
     component.set("v.isModalOpen", false);
+  },
+
+  doInit: function (component, event, helper) {
+    let action = component.get("c.getActualCarList");
+    action.setCallback(this, function (response) {
+      let state = response.getState();
+      if (state === "SUCCESS") {
+        component.set("v.options", response.getReturnValue());
+      } else {
+        console.log("Failed with state: " + state);
+      }
+    });
+    $A.enqueueAction(action);
   }
+
 });
