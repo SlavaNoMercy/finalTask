@@ -12,5 +12,5 @@
         <c:product car="{!car}" />
       </lightning:layout>
     </aura:iteration>
-  </div>
+  </div> 
 </aura:component>
