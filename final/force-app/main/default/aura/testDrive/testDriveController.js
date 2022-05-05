@@ -28,11 +28,25 @@
     let company = component.get("v.newLead.Company");
     newLead.Company = company;
 
-    let source = component.get("v.newLead.LeadSource");
+    let source = component.get("v.newLead.LeadSource"); 
     newLead.LeadSource = source;
 
     helper.createLead(component, JSON.stringify(newLead));
     console.log(JSON.stringify(newLead));
     component.set("v.isModalOpen", false);
+  },
+
+  doInit: function (component, event, helper) {
+    let action = component.get("c.getCarsAllowedTestDrive");
+    action.setCallback(this, function (response) {
+      let state = response.getState();
+      if (state === "SUCCESS") {
+        component.set("v.options", response.getReturnValue());
+      } else {
+        console.log("Failed with state: " + state);
+      }
+    });
+    $A.enqueueAction(action);
   }
+
 });

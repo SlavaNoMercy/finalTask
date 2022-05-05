@@ -1,6 +1,6 @@
 <aura:component
   implements="forceCommunity:availableForAllPageTypes"
-  controller="LadaLeadController"
+  controller="LadaCarController"
 >
   <aura:attribute
     name="newLead"
@@ -11,11 +11,41 @@
                      'LeadSource': 'Web',
                      'Status': 'Open - Not Contacted',
 					           'Email':'',
-             		     'Description':''
+             		     'ProductInterest__c':''
                    }"
   />
-  <aura:attribute name="isModalOpen" type="boolean" default="false" />
-  <div class="slds-m-around_xx-large">
+  <aura:attribute name="options" type="Product2[]" access="PRIVATE"/>
+  <aura:attribute name="selectedValue" type="String" access="PRIVATE"/>
+  <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+  <!--<aura:attribute name="isModalOpen" type="boolean" default="false" />-->
+
+  <h1>Registration on Test-Drive</h1>
+
+  <form action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="POST">
+
+    <input type="hidden" name="oid" value="00D5j00000AHFVr"/>
+    <input type="hidden" name="retURL" value="https://slava-nomercy-developer-edition.ap27.force.com/lada"/>
+    <input type="hidden" name="00N5j00000FnYcA" value="{!v.selectedValue}" />
+    <input type="hidden" name="title" value="Test-Drive" />
+    <p><label for="first_name">First Name</label><input  id="first_name" maxlength="40" name="first_name" size="20" type="text" /></p>
+    
+    <p><label for="last_name">Last Name</label><input  id="last_name" maxlength="80" name="last_name" size="20" type="text" /></p>
+    
+    <lightning:select name="colorId" label="Product Interest:" aura:id="colorId" value="{!v.selectedValue}">
+      <aura:iteration items="{!v.options}" var="option">
+          <option text="{!option.Name}" />
+      </aura:iteration>
+  </lightning:select><br/>
+    
+    <p><label for="email">Email</label><input  id="email" maxlength="80" name="email" size="20" type="text" /></p>
+    
+    <p><label for="phone">Phone</label><input  id="phone" maxlength="40" name="phone" size="20" type="text" /></p>
+    
+    <input type="submit" name="submit"/>
+    
+    </form>
+
+  <!--<div class="slds-m-around_xx-large">
     <lightning:button
       variant="brand"
       label="TestDrive"
@@ -46,7 +76,7 @@
             >
               <legend
                 id="newCampaingForm"
-                class="slds-text-heading--small slds-p-vertical--medium"
+                class="slds-text-heading-small slds-p-vertical-medium" 
               >
                 Test-drive
               </legend>
@@ -112,5 +142,5 @@
       </section>
       <div class="slds-backdrop slds-backdrop_open"></div>
     </aura:if>
-  </div>
+  </div>-->
 </aura:component>
