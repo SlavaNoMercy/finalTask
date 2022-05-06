@@ -8,7 +8,7 @@ public without sharing class LadaQueryManager {
             ];
     }
 
-    //@AuraEnabled
+    @AuraEnabled
     public static List<PricebookEntry> getCarsListWithPrices(String selectedCurrency){
         if(Schema.sObjectType.PricebookEntry.isAccessible()){
             return [SELECT UnitPrice, Product2Id, Product2.Name, Product2.ProductCode, Product2.Family
@@ -17,6 +17,7 @@ public without sharing class LadaQueryManager {
             AND CurrencyIsoCode=:selectedCurrency
             LIMIT 15];
         } else{
+            System.debug('cannot reach class');
             return null;
         }
     }
