@@ -3,4 +3,7 @@
 //     query text and running the command:
 //     SFDX: Execute SOQL Query with Currently Selected Text
 
-SELECT Id, Name FROM Account
+SELECT Id, Product2Id, UnitPrice, ProductCode, Name
+  FROM PricebookEntry
+  WHERE CurrencyIsoCode = 'USD' AND Pricebook2Id = '01s5j00000GRjGZAA1'
+  LIMIT 25

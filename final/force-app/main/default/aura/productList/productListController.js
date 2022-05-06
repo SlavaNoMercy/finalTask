@@ -1,8 +1,9 @@
 ({
   doInit: function (component, event, helper) {
-    let action = component.get("c.getProduct");
-    action.setCallback(this, function (response) {
-      let state = response.getState();
+    const action = component.get("c.getActualCarList");
+    action.setCallback(component, function (response) {
+      const state = response.getState();
+      console.log(response);
       if (state === "SUCCESS") {
         component.set("v.cars", response.getReturnValue());
       } else {

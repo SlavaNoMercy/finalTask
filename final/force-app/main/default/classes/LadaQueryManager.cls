@@ -1,5 +1,5 @@
 public without sharing class LadaQueryManager {
-    //@AuraEnabled
+    @AuraEnabled
     public static List<Car_Center__c> getServicesList() {
         return [SELECT Id,Name,Address__c, Latitude__c,
         Longitude__c,Contact_Number__c,Working_Hours__c, RecordTypeId, Description__c
@@ -13,8 +13,8 @@ public without sharing class LadaQueryManager {
         if(Schema.sObjectType.PricebookEntry.isAccessible()){
             return [SELECT UnitPrice, Product2Id, Product2.Name, Product2.ProductCode, Product2.Family
             FROM PricebookEntry
-            WHERE Pricebook2Id='01s5j00000GRjGZAA1' 
-            AND CurrencyIsoCode=:selectedCurrency
+            WHERE CurrencyIsoCode =:selectedCurrency 
+            AND Pricebook2Id = '01s5j00000GRjGZAA1'
             LIMIT 15];
         } else{
             System.debug('cannot reach class');

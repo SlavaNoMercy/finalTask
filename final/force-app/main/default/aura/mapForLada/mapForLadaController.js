@@ -3,7 +3,7 @@
     try {
       helper.callToServer(
         component,
-        "c.findServicesForMap",
+        "c.getServices",
         function (response) {
           let markers = [];
           for (let i = 0; i < response.length; i++) {

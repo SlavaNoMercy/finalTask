@@ -1,5 +1,5 @@
 <aura:component
-  controller="ServicesController"
+  controller="LadaCarController"
   implements="forceCommunity:availableForAllPageTypes"
 >
   <aura:attribute name="services" type="Car_Center__c[]" />

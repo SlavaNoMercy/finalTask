@@ -1,4 +1,4 @@
-<aura:component controller="MapController">
+<aura:component controller="LadaCarController">
   <aura:attribute name="mapMarkers" type="Object" />
   <aura:attribute name="listView" type="String" />
   <aura:attribute name="markersTitle" type="String" />

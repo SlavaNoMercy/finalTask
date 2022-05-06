@@ -1,5 +1,5 @@
 <aura:component
-  controller="CarListController"
+  controller="LadaCarController"
   implements="forceCommunity:availableForAllPageTypes"
 >
   <aura:attribute name="cars" type="Product2[]" />
