@@ -3,7 +3,8 @@
 //     query text and running the command:
 //     SFDX: Execute SOQL Query with Currently Selected Text
 
-SELECT Id, Product2Id, UnitPrice, ProductCode, Name
-  FROM PricebookEntry
-  WHERE CurrencyIsoCode = 'USD' AND Pricebook2Id = '01s5j00000GRjGZAA1'
-  LIMIT 25
+SELECT UnitPrice, Product2Id, Product2.Name, Product2.ProductCode, Product2.Family
+            FROM PricebookEntry
+            WHERE CurrencyIsoCode = 'USD' 
+            AND Pricebook2Id = '01s5j00000GRjGZAA1'
+            LIMIT 15

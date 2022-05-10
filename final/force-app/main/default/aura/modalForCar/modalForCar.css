@@ -1,2 +1,19 @@
-.THIS {
+.THIS.enterButton {
 }
+
+div.slds-m-around_xx-large.cModalForCar {
+    text-align: center;
+
+}
+
+div.slds-m-around_xx-large.cModalForCar button {
+    color: black;
+    background-color: white;
+    border-radius: 0;
+    border-color: dimgrey;
+}
+
+div.slds-m-around_xx-large.cModalForCar button:hover {
+    background-color: rgb(197, 197, 197);
+}
+

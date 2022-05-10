@@ -2,54 +2,53 @@
     <html>
         <head>
             <style>
-                *{
-                    box-sizing: border-box;
+                h1 {
+                text-align: center;    
                 }
-
-                .heading {
-                font-weight: bold;
+                td {
+                text-align: left;
+                width: max-content; 
                 }
-                
-                .heading--main {
-                font-size: 36px;
+                th {
+                width: 20%;
                 }
-                
-                .heading--sub {
-                font-size: 21px;
-                }
-                
-                .box--half {
-                float: left;
-                width: 50%;
-                }             
+                table {
+                width: 100%;
+                margin-bottom: 30px;
+                }           
             </style>
         </head>
         <body>
-            <apex:image id="theImage" value="{!$Resource.faviconLada}" width="100" height="100"/>
-            <h1 class="heading heading--main">Lada</h1>
-            <br/>
-            <div class="box--half">
-                <h2 class="heading heading--sub">Car:</h2>
-                <span>Model</span>
-                <br/>
-                <span>Complectation 1</span>
-                <br/>
-                <span>Complectation 2</span>
-                <br/>
-                <span>Complectation 3</span>
-                <br/>
-            </div>
-            <div class="box--half">
-                <h2 class="heading heading--sub">Price:</h2>
-                <span></span>
-                <br/>
-                <span>Price 1</span>
-                <br/>
-                <span>Price 2</span>
-                <br/>
-                <span>Price 3</span>
-                <br/>
-            </div>
+            <apex:image id="theImage" value="{!$Resource.faviconLada}" width="auto" height="80px" />
+            <h1>Lada</h1>
+            <apex:repeat value="{!actualCarList}" var="cars" >
+                <table border="1" cellpadding="7" cellspacing="0">
+                    <tr>
+                        <th>Model:</th><td>{!cars.Product2.Name}</td>
+                    </tr>
+                    <tr>
+                        <th>Complectation:</th><td>{!cars.Product2.Equipment__c}</td>        
+                    </tr>
+                    <tr>
+                        <th>Product Code:</th><td>{!cars.Product2.ProductCode}</td>       
+                    </tr>
+                    <tr>
+                        <th>Description:</th><td>{!cars.Product2.Description}</td>
+                    </tr>
+                    <tr>
+                        <th>Price:</th><th>{!cars.UnitPrice} {!cars.CurrencyIsoCode}</th>
+                    </tr>                    
+                </table>
+            </apex:repeat>
+            <!-- <apex:variable name="family" type="String" default="Niva" id="familyAttribute" />
+            <script>
+                function passToController(){
+                    const family = document.getElementById('familyAttribute');
+                    var action = cmp.get("c.getCarsByFamily");
+                    action.setParams({ family : family });
+                    $A.enqueueAction(action);
+                }
+            </script> -->
         </body>
     </html>
 </apex:page>

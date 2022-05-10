@@ -1,9 +1,11 @@
 <aura:component implements="forceCommunity:availableForAllPageTypes">
-  <aura:attribute name="car" type="Product2" />
+  <aura:attribute name="car" type="PricebookEntry" />
+  <aura:attribute name="family" type="String" default="Niva" />
+  <aura:handler name="init" action="{!c.doInit}" value="{!this}" />
   <div class="slds-region_narrow">
-    <p>{!v.car.Name}</p>
+    <p>{!v.car.Product2.Name}</p>
     <img
-      src="https://senla8-dev-ed.my.salesforce.com/sfc/servlet.shepherd/document/download/p/5j00000AHFVr/a/5j000000IBeG/.zz8ROeMjsMBT8CMkgFtXI8S3aZZJP2py9B5ZQGbYls"
+      src="{!$Resource.LadaCenterHome + '/lada' + v.family + '.jpg'}"
     />
     <c:modalForCar car="{!v.car}" />
   </div>

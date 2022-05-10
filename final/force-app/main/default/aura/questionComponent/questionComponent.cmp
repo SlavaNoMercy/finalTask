@@ -2,7 +2,7 @@
   implements="forceCommunity:availableForAllPageTypes"
   controller="LadaCarController"
 >
-  <aura:attribute name="options" type="Product2[]" access="PRIVATE"/>
+  <aura:attribute name="options" type="PricebookEntry[]" access="PRIVATE"/>
   <aura:attribute name="selectedValue" type="String" access="PRIVATE"/>
   <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
 
@@ -21,7 +21,7 @@
   
   <lightning:select name="carId" label="Product Interest:" aura:id="carId" value="{!v.selectedValue}">
       <aura:iteration items="{!v.options}" var="option">
-          <option text="{!option.Name}" />
+          <option text="{!option.Product2.Name}" />
       </aura:iteration>
     </lightning:select><br/>
   
@@ -32,7 +32,7 @@
   <option value="Other">Other</option>
   </select><br/>
   
-  <label for="reason">Case Reason</label><select  id="reason" name="reason"><option value="">--None--</option><option value="Installation">Installation</option>
+  <label for="reason">Reason</label><select  id="reason" name="reason"><option value="">--None--</option><option value="Installation">Installation</option>
   <option value="Equipment Complexity">Equipment Complexity</option>
   <option value="Performance">Performance</option>
   <option value="Breakdown">Breakdown</option>

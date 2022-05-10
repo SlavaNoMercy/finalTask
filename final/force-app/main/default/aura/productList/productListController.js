@@ -3,7 +3,7 @@
     const action = component.get("c.getActualCarList");
     action.setCallback(component, function (response) {
       const state = response.getState();
-      console.log(response);
+      //console.log(response);
       if (state === "SUCCESS") {
         component.set("v.cars", response.getReturnValue());
       } else {

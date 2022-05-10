@@ -2,7 +2,7 @@
   controller="LadaCarController"
   implements="forceCommunity:availableForAllPageTypes"
 >
-  <aura:attribute name="cars" type="Product2[]" />
+  <aura:attribute name="cars" type="PricebookEntry[]" />
   <aura:handler name="init" action="{!c.doInit}" value="{!this}" />
   <img src="{!$Resource.LadaCenterHome + '/ladaHomePage.jpg'}" />
   <h1>Lada Car Gallery</h1>

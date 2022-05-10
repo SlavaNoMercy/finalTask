@@ -8,6 +8,7 @@
   },
 
   submitDetails: function (component, event, helper) {
-    component.set("v.isModalOpen", false);
+    //component.set("v.isModalOpen", false);
+    window.location.href = "/apex/formPDFForCar";
   }
 });

@@ -34,7 +34,7 @@
     let action = component.get("c.getActualCarList");
     action.setCallback(this, function (response) {
       let state = response.getState();
-      console.log(response);
+      //console.log(response);
       if (state === "SUCCESS") {
         component.set("v.options", response.getReturnValue());
       } else {

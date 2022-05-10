@@ -14,13 +14,18 @@ public without sharing class LadaCarController {
     }
 
     @AuraEnabled
-    public static List<Product2> getActualCarList(){
-        List<Product2> products = new List<Product2>();
-        for (PriceBookEntry pbEntry : LadaQueryManager.getCarsListWithPrices('USD')) {
-            Product2 aProduct = new Product2();
-            aProduct.Id = pbEntry.Product2Id;
-            aProduct.Name = pbEntry.Product2.Name;
-            products.add(aProduct);
+    public static List<PricebookEntry> getActualCarList(){
+        List<PricebookEntry> products = LadaQueryManager.getCarsListWithPrices('USD');
+        return products;
+    }
+
+    //@AuraEnabled
+    public static List <PricebookEntry> getCarsByFamily(String family){
+        List<PricebookEntry> products = LadaQueryManager.getCarsListWithPrices('USD');
+        for (Integer i=0;i<products.size();i++){
+            if(!products[i].Product2.Family.contains(family)){
+                products.remove(i);
+            }
         }
         return products;
     }

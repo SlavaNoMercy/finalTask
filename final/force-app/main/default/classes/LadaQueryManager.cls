@@ -10,32 +10,16 @@ public without sharing class LadaQueryManager {
 
     @AuraEnabled
     public static List<PricebookEntry> getCarsListWithPrices(String selectedCurrency){
-        if(Schema.sObjectType.PricebookEntry.isAccessible()){
-            return [SELECT UnitPrice, Product2Id, Product2.Name, Product2.ProductCode, Product2.Family
+        //if(Schema.sObjectType.PricebookEntry.isAccessible()){
+            return [SELECT UnitPrice, Product2Id, Product2.Name, Product2.ProductCode, Product2.Family,
+            Product2.Description,Product2.Equipment__c,Product2.Description__c,CurrencyIsoCode
             FROM PricebookEntry
             WHERE CurrencyIsoCode =:selectedCurrency 
             AND Pricebook2Id = '01s5j00000GRjGZAA1'
             LIMIT 15];
-        } else{
-            System.debug('cannot reach class');
-            return null;
-        }
+        //} else{
+        //    System.debug('cannot reach class');
+        //    return null;
+        //}
     }
-
-    public static Boolean isLeadExist(String enteredEmail, String enteredPhone){
-        enteredEmail = '%' + enteredEmail + '%';
-        enteredPhone = '%' + enteredPhone + '%';
-        try{
-            Lead checkLead = [SELECT Id,Email,Phone 
-            FROM Lead
-            WHERE Email=:enteredEmail
-            OR Phone=:enteredPhone
-            LIMIT 1];
-            return true;
-        } catch(QueryException e){
-            return false;
-        }
-    }
-
-
 }

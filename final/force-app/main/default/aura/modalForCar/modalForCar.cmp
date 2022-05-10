@@ -1,6 +1,6 @@
-<aura:component implements="forceCommunity:availableForAllPageTypes">
+<aura:component  implements="force:appHostable,force:lightningQuickActionWithoutHeader,forceCommunity:availableForAllPageTypes" access="global">
   <aura:attribute name="isModalOpen" type="boolean" default="false" />
-  <aura:attribute name="car" type="Product2" />
+  <aura:attribute name="car" type="PricebookEntry" />
   <div class="slds-m-around_xx-large">
     <lightning:button
       variant="neutral"
@@ -8,7 +8,7 @@
       title="Details"
       onclick="{! c.openModel }"
     />
-    <aura:if isTrue="{!v.isModalOpen}">
+    <aura:if isTrue="{!v.isModalOpen}"> 
       <section
         role="dialog"
         tabindex="-1"
@@ -30,17 +30,17 @@
               id="modal-heading-01"
               class="slds-text-heading_medium slds-hyphenate"
             >
-              {!v.car.Name}
+              {!v.car.Product2.Name}
             </h2>
           </header>
           <div
             class="slds-modal__content slds-p-around_medium"
             id="modal-content-id-1"
           >
-            <p>{!v.car.ProductCode}</p>
-            <p>{!v.car.Family}</p>
-            <p>{!v.car.Description__c}</p>
-            <p>{!v.car.Equipment__c}</p>
+            <p>{!v.car.Product2.ProductCode}</p>
+            <p>{!v.car.Product2.Family}</p>
+            <p>{!v.car.Product2.Description}</p>
+            <p>{!v.car.Product2.Equipment__c}</p>
           </div>
           <footer class="slds-modal__footer">
             <lightning:button
