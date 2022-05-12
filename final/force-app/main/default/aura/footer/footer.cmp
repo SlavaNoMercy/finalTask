@@ -1,7 +1,7 @@
 <aura:component implements="forceCommunity:availableForAllPageTypes">
 
-  <div style="text-align: center;position:relative">
-      <a vhref="https://github.com/SlavaNoMercy/finalTask/tree/master/final"
+  <div>
+    <a href="https://github.com/SlavaNoMercy/finalTask/tree/master/final"
         class="refStyle">Code at Github</a>
-    </div>
+  </div>
 </aura:component>

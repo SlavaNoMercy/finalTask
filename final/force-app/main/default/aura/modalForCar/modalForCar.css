@@ -27,7 +27,7 @@ div.slds-m-around_xx-large.cModalForCar button:hover {
     background-color: whitesmoke;
     animation: wiggle 2s linear infinite;
 }
-/* Keyframes */
+
 @keyframes wiggle {
   0%, 7% {
     transform: rotateZ(0);

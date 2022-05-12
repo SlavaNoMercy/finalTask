@@ -3,7 +3,11 @@
   font-family: "Varela", sans-serif;
 }
 
-
+div.cFooter.cMain {
+  text-align: center;
+  position:relative;
+  height: 8em;
+}
 
 div.cFooter.cMain a.refStyle {
   position: relative;
@@ -11,4 +15,24 @@ div.cFooter.cMain a.refStyle {
   outline: none;
   text-decoration: none;
   color: rgb(212, 212, 212);
+  font-size: large;
+  animation: mymove 20s infinite;
+}
+
+/* div.cFooter.cMain div {
+  width: 10%;
+  height: auto;
+  background: red;
+  position: relative;
+  animation: mymove 20s infinite;
+} */
+
+@keyframes mymove {
+  0% {left: 0px;}
+  25% {left: 30px;}
+  50% {right: 60px;}
+  62.5% {left: 15px;}
+  75% {left: 0px;}
+  87.5% {right: 30px;}
+  100% {left: 0px;}
 }

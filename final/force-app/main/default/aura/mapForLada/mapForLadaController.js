@@ -43,6 +43,7 @@
             }
           });
           component.set("v.listView", "hidden");
+          console.log(component.get("v.mapMarkers"));
         }
       );
     } catch (e) {
