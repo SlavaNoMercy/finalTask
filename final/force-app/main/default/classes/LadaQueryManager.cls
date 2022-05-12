@@ -12,7 +12,7 @@ public without sharing class LadaQueryManager {
     public static List<PricebookEntry> getCarsListWithPrices(String selectedCurrency){
         //if(Schema.sObjectType.PricebookEntry.isAccessible()){
             return [SELECT UnitPrice, Product2Id, Product2.Name, Product2.ProductCode, Product2.Family,
-            Product2.Description,Product2.Equipment__c,Product2.Description__c,CurrencyIsoCode
+            Product2.Description,Product2.Equipment__c,Product2.Description__c,CurrencyIsoCode,Product2.Product_Image_Link__c
             FROM PricebookEntry
             WHERE CurrencyIsoCode =:selectedCurrency 
             AND Pricebook2Id = '01s5j00000GRjGZAA1'
