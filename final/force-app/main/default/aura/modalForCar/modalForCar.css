@@ -14,14 +14,43 @@ div.slds-m-around_xx-large.cModalForCar {
 
 div.slds-m-around_xx-large.cModalForCar button {
     color: black;
-    background-color: rgb(123, 152, 248);
+    /* background-color: rgb(123, 152, 248); 
     border-radius: 0;
-    border-color: rgb(0, 0, 0);
+    border-color: rgb(0, 0, 0);*/
     height: fit-content;
+    border: none;
     align-self: center;
 }
 
 div.slds-m-around_xx-large.cModalForCar button:hover {
-    background-color: rgb(197, 197, 197);
+    color: black;
+    background-color: whitesmoke;
+    animation: wiggle 2s linear infinite;
 }
+/* Keyframes */
+@keyframes wiggle {
+  0%, 7% {
+    transform: rotateZ(0);
+  }
+  15% {
+    transform: rotateZ(-15deg);
+  }
+  20% {
+    transform: rotateZ(10deg);
+  }
+  25% {
+    transform: rotateZ(-10deg);
+  }
+  30% {
+    transform: rotateZ(6deg);
+  }
+  35% {
+    transform: rotateZ(-4deg);
+  }
+  40%, 100% {
+    transform: rotateZ(0);
+  }
+}
+
+
 
