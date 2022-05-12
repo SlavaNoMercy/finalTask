@@ -1,12 +1,12 @@
 <aura:component implements="forceCommunity:availableForAllPageTypes">
   <aura:attribute name="car" type="PricebookEntry" />
+  <aura:registerEvent name="cmpEvent" type="c:ComponentEvent" />
   <aura:attribute name="family" type="String" default="Niva" />
   <aura:handler name="init" action="{!c.doInit}" value="{!this}" />
   <div class="slds-region_narrow">
     <p>{!v.car.Product2.Name}</p>
-    <img
-      src="{!$Resource.LadaCenterHome + '/lada' + v.family + '.jpg'}"
-    />
     <c:modalForCar car="{!v.car}" />
+    <!-- <img src="{!$Resource.LadaCenterHome + '/lada' + v.family + '.jpg'}"
+     onclick="{!c.clickOnImage}" /> -->
   </div>
 </aura:component>

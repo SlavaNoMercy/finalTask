@@ -8,6 +8,7 @@
       title="Details"
       onclick="{! c.openModel }"
     />
+    <img src="{!$Resource.LadaCenterHome + '/ladaHomePage.jpg'}" onclick="{!c.openModel}" />
     <aura:if isTrue="{!v.isModalOpen}"> 
       <section
         role="dialog"
@@ -41,6 +42,7 @@
             <p>{!v.car.Product2.Family}</p>
             <p>{!v.car.Product2.Description}</p>
             <p>{!v.car.Product2.Equipment__c}</p>
+            <img src="{!$Resource.LadaCenterHome + '/ladaVesta.jpg'}" />
           </div>
           <footer class="slds-modal__footer">
             <lightning:button

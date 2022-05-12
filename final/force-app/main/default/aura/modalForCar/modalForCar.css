@@ -1,16 +1,24 @@
-.THIS.enterButton {
+.THIS {
+    text-align: end;
+    position: relative;
+    display: flex;
+    margin: 0 0 15px 0px
 }
 
 div.slds-m-around_xx-large.cModalForCar {
     text-align: center;
-
+    margin: 17px 10px 10px 0px;
+    position: relative;
+    display: contents;
 }
 
 div.slds-m-around_xx-large.cModalForCar button {
     color: black;
-    background-color: white;
+    background-color: rgb(123, 152, 248);
     border-radius: 0;
-    border-color: dimgrey;
+    border-color: rgb(0, 0, 0);
+    height: fit-content;
+    align-self: center;
 }
 
 div.slds-m-around_xx-large.cModalForCar button:hover {

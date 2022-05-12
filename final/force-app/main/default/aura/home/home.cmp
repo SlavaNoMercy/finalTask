@@ -2,7 +2,7 @@
   <img src="{!$Resource.LadaCenterHome + '/ladaHomePage.jpg'}" />
   <div class="cmp-container">
     <div>
-      <h2>Niva</h2>
+      <h2>Niva</h2> 
       <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim

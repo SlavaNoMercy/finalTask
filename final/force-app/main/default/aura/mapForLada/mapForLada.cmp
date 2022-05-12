@@ -4,6 +4,7 @@
   <aura:attribute name="markersTitle" type="String" />
   <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
   <aura:if isTrue="{!!empty(v.mapMarkers)}">
+  <div class="cmp-container">  
     <lightning:map
       mapMarkers="{!v.mapMarkers }"
       markersTitle="{!v.markersTitle}"
@@ -11,5 +12,11 @@
       center="{!v.center}"
       listView="{!v.listView}"
     />
+    <aura:iteration items="{!v.mapMarkers}" var="service">
+      <div class="service-list">
+        <p>{!service.Name}</p>
+      </div>
+    </aura:iteration>
+  </div>
   </aura:if>
 </aura:component>

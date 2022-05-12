@@ -5,5 +5,9 @@
     //component.set("v.family",selectValue[0]);
     component.set("v.family","Niva");
     console.log(component.get("v.car"));
+  },
+
+  clickOnImage: function(component,event,helper){
+    console.log('click');
   }
 });

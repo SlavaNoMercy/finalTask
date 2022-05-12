@@ -43,5 +43,4 @@
     });
     $A.enqueueAction(action);
   }
-
 });

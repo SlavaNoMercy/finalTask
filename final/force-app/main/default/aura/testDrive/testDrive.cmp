@@ -15,19 +15,26 @@
     <input type="hidden" name="retURL" value="https://slava-nomercy-developer-edition.ap27.force.com/lada"/>
     <input type="hidden" name="00N5j00000FnYcA" value="{!v.selectedValue}" />
     <input type="hidden" name="title" value="Test-Drive" />
-    <p><label for="first_name">First Name</label><input  id="first_name" maxlength="40" name="first_name" size="20" type="text" /></p>
     
-    <p><label for="last_name">Last Name</label><input  id="last_name" maxlength="80" name="last_name" size="20" type="text" required="true" /></p>
+    <p>(<b>*</b>)Required field</p>
+
+    <p><label for="first_name">First Name</label><input  id="first_name" maxlength="40" name="first_name" size="20" type="text"
+      pattern="[A-Za-z']{0,40}" /></p>
     
-    <lightning:select name="carId" label="Product Interest:" aura:id="carId" value="{!v.selectedValue}">
+    <p><label for="last_name">Last Name<b>*</b></label><input  id="last_name" maxlength="80" name="last_name" size="20" type="text" required="true"
+      pattern="[A-Za-z']{0,80}" /></p>
+    
+    <lightning:select name="carId" label="Product Interest" aura:id="carId" value="{!v.selectedValue}">
       <aura:iteration items="{!v.options}" var="option">
           <option text="{!option.Product2.Name}" />
       </aura:iteration>
-    </lightning:select><br/>
+    </lightning:select>
     
-    <p><label for="email">Email</label><input  id="email" maxlength="80" name="email" size="20" type="text" required="true" /></p>
+    <p><label for="email">Email<b>*</b></label><input  id="email" maxlength="80" name="email" size="20" type="text" required="true"
+      pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" /></p>
     
-    <p><label for="phone">Phone</label><input  id="phone" maxlength="40" name="phone" size="20" type="text" /></p>
+    <p><label for="phone">Phone</label><input  id="phone" maxlength="40" name="phone" size="20" type="text"
+      pattern="^([+]39)?((3[\d]{2})([ ,\-,\/]){0,1}([\d, ]{6,9}))|(((0[\d]{1,4}))([ ,\-,\/]){0,1}([\d, ]{5,10}))$" /></p>
     
     <input type="submit" name="submit"/>
     

@@ -7,43 +7,73 @@
   <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
 
   <h1>Question Form</h1>
+  <span class="line"></span>
 
 <form action="https://webto.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8" method="POST">
 
   <input type="hidden" name="orgid" value="00D5j00000AHFVr"/>
   <input type="hidden" name="retURL" value="https://slava-nomercy-developer-edition.ap27.force.com/lada"/>
   
-  <p><label for="name">Contact Name</label><input  id="name" maxlength="80" name="name" size="20" type="text" /></p>
+  <p>(<b>*</b>)Required field</p>
+
+  <p><label for="name">Contact Name<b>*</b></label><input  id="name" maxlength="80" name="name" size="20" type="text" 
+      pattern="([A-Za-z'$]+ [A-Za-z'$]+)" required="true" /></p>
   
-  <p><label for="email">Email</label><input  id="email" maxlength="80" name="email" size="20" type="text" required="true"/></p>
+  <!-- <p><b>*</b><label for="email">Email</label><input  id="email" maxlength="80" name="email" size="20" type="text" placeholder="example@google.com"
+    pattern="(?:[a-z0-9!#$%'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%'*+/=?^_`{|}~-]+)*|           etot regex kruche))))
+    (?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])
+    *)@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:
+    (2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9]))\.){3}(?:(2(5[0-5]|[0-4][0-9])|1[0-9]
+    [0-9]|[1-9]?[0-9])|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]
+    |\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])" required="true" /></p>  -->
+    <p><label for="email">Email<b>*</b></label><input  id="email" maxlength="80" name="email" size="20" type="text" placeholder="example@google.com"
+      pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required="true" /></p> 
   
-  <p><label for="phone">Phone</label><input  id="phone" maxlength="40" name="phone" size="20" type="text" /></p>
+  <p><label for="phone">Phone</label><input  id="phone" maxlength="40" name="phone" size="20" type="text" placeholder="+375(29)666-66-66"
+      pattern="^([+]39)?((3[\d]{2})([ ,\-,\/]){0,1}([\d, ]{6,9}))|(((0[\d]{1,4}))([ ,\-,\/]){0,1}([\d, ]{5,10}))$" /></p>
   
-  <lightning:select name="carId" label="Product Interest:" aura:id="carId" value="{!v.selectedValue}">
+  <lightning:select name="carId" label="Product Interest" aura:id="carId" value="{!v.selectedValue}">
       <aura:iteration items="{!v.options}" var="option">
           <option text="{!option.Product2.Name}" />
       </aura:iteration>
-    </lightning:select><br/>
-  
-  <label for="type">Type</label><select  id="type" name="type"><option value="">--None--</option><option value="Mechanical">Mechanical</option>
+  </lightning:select>
+  <lightning:select  name="type" label="Type">
+        <option value="">--None--</option>
+        <option value="Mechanical">Mechanical</option>
+        <option value="Electrical">Electrical</option>
+        <option value="Electronic">Electronic</option>
+        <option value="Structural">Structural</option>
+        <option value="Other">Other</option>
+  </lightning:select>
+  <lightning:select  name="reason" label="Reason">
+        <option value="Equipment Complexity">Equipment Complexity</option>
+        <option value="Performance">Performance</option>
+        <option value="Breakdown">Breakdown</option>
+        <option value="Equipment Design">Equipment Design</option>
+        <option value="Feedback">Feedback</option>
+        <option value="Other">Other</option>
+  </lightning:select>
+
+
+  <!-- <label for="type">Type</label><select  id="type" name="type"><option value="">- -None- -</option><option value="Mechanical">Mechanical</option>
   <option value="Electrical">Electrical</option>
   <option value="Electronic">Electronic</option>
   <option value="Structural">Structural</option>
   <option value="Other">Other</option>
   </select><br/>
   
-  <label for="reason">Reason</label><select  id="reason" name="reason"><option value="">--None--</option><option value="Installation">Installation</option>
+  <label for="reason">Reason</label><select  id="reason" name="reason"><option value="">- -None- -</option><option value="Installation">Installation</option>
   <option value="Equipment Complexity">Equipment Complexity</option>
   <option value="Performance">Performance</option>
   <option value="Breakdown">Breakdown</option>
   <option value="Equipment Design">Equipment Design</option>
   <option value="Feedback">Feedback</option>
   <option value="Other">Other</option>
-  </select><br/>
+  </select><br/> -->
   
-  <label for="subject">Subject</label><input  id="subject" maxlength="80" name="subject" size="20" type="text" required="true"/><br/>
+  <p><label for="subject">Subject<b>*</b></label><input  id="subject" maxlength="80" name="subject" size="20" type="text" required="true"/></p>
   
-  <label for="description">Description</label><textarea name="description"></textarea><br/>
+  <p><label for="description">Description</label><textarea name="description"></textarea></p>
   
   <input type="hidden"  id="external" name="external" value="1" /><br/>
   

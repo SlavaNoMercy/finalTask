@@ -1,7 +1,12 @@
 .THIS {
+  background: black;
+  font-family: "Varela", sans-serif;
 }
 
+
+
 div.cFooter.cMain a.refStyle {
+  position: relative;
   border: none;
   outline: none;
   text-decoration: none;

@@ -1,4 +1,10 @@
 .THIS {
+  width: max-content;
+}
+
+.cHeader.cMain div.slds-p-around_small button.slds-button.slds-button_neutral.changeMe {
+  text-decoration: underline;
+  color: #000000;
 }
 
 .THIS.c-container {

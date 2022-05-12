@@ -1,16 +1,14 @@
-.THIS {
-}
-
 .THIS.container {
   padding: 0px 50px 0px;
   align-items: stretch;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-evenly;
+  background-image: linear-gradient(to bottom,white, rgb(170 166 217/50%));
 }
 
 h1.cProductList.cMain {
-  margin: 1em 0 0.5em 0;
+  margin: 1em 0 0.5em 0; 
   color: #343434;
   font-weight: normal;
   font-family: "Ultra", sans-serif;

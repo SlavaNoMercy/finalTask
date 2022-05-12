@@ -1,29 +1,30 @@
-.THIS {
-}
-
 div.cmp-container.cHome.cMain {
-  padding: 60px 90px 0px;
-  display: table;
+  padding: 60px 90px 30px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
 }
 
 div.cmp-container.cHome.cMain div {
-  display: table-cell;
+  display: flex;
+  flex-wrap: wrap;
   padding: 10px;
-  width: 50%;
+  width: 500px;
+  max-width: max-content;
   height: auto;
-  bottom: 200px;
   position: relative;
 }
 
 div.cmp-container.cHome.cMain img {
-  display: table-cell;
-  width: auto;
-  height: auto;
+  display: flex;
+  flex-wrap: wrap;
+  width: 515px;
+  height: 290px;
+  transform: none;
 }
 
 div.cmp-container.cHome.cMain div p {
   justify-content: start;
-  bottom: 50px;
   font-size: larger;
   color: #000;
 }
