@@ -6,7 +6,7 @@ global class BatchUpdateExchangeRate implements Database.Batchable<sObject>,
             [SELECT Id,Product2Id,CurrencyIsoCode,UnitPrice
             FROM PricebookEntry
             WHERE Pricebook2.Name = 'LADA Cars Price Book'
-            /*AND CurrencyIsoCode = 'BYR'*/]);
+            AND CurrencyIsoCode = 'USD']);
                                         // 'SELECT Id,Product2Id,CurrencyIsoCode,UnitPrice'+
                                         // 'FROM PricebookEntry'+
                                         // 'WHERE Pricebook2Id = "01s5j00000GRjGZAA1"'+
@@ -24,21 +24,18 @@ global class BatchUpdateExchangeRate implements Database.Batchable<sObject>,
     }
     
     global void finish(Database.BatchableContext bc){
-        
+        System.debug('passed');
     }
     
     global void execute(SchedulableContext ctx) {
         Http http = new Http();
         HttpRequest request = new HttpRequest();
-        request.setEndpoint('https://www.nbrb.by/api/exrates/rates?periodicity=0');
-		request.setMethod('GET');
-        HttpResponse response; 
-        try{
-            response = http.send(request);
-        } catch (System.CalloutException e){
-            System.debug('The following exception has occurred: ' + e.getMessage());
-        }
-        List<Map<String, String>> valueList = (List<Map<String, String>>)JSON.deserializeUntyped(response.getBody());
+        request.setEndpoint('https://api.currencyapi.com/v3/latest?apikey=mZtRwAk3xLwZ24zQdYkY1xDc93twfGIVffrZuhw0');
+        request.setMethod('GET');
+        request.setTimeout(20000);
+        HttpResponse response = http.send(request); 
+        Map<String,Map<String, Map<String,String>>> responseMap = (Map<String,Map<String, Map<String,String>>>)JSON.deserializeUntyped(response.getBody());
+
         for(String ISOCode : LadaCarController.AVAILABLE_CURRENCY){
             try{
                 Cache.Org.put(ISOCode, 
