@@ -6,6 +6,7 @@
     action="{!c.handleComponentEvent}"
   />
   <c:header />
+  <!-- <c:flowComponent /> -->
   <aura:renderIf isTrue="{!v.renderedCmp=='home'}">
     <c:home />
   </aura:renderIf>

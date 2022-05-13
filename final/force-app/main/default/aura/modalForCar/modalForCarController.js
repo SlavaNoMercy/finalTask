@@ -9,6 +9,6 @@
 
   submitDetails: function (component, event, helper) {
     //component.set("v.isModalOpen", false);
-    window.location.href = "/apex/formPDFForCar";
+    window.location.href = "https://slava-nomercy-developer-edition.ap27.force.com/lada/formPDFForCar";
   }
 });
