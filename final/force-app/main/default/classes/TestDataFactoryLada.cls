@@ -18,7 +18,6 @@ global with sharing class TestDataFactoryLada implements HttpCalloutMock {
                 standartPBEntries.add(standardPBEntry);
                 PricebookEntry pbEntry = new PricebookEntry(Product2Id=subj.Id,UnitPrice=1,CurrencyIsoCode=ISO,Pricebook2Id=ladaPB.Id,UseStandardPrice=false);
                 pbEntries.add(pbEntry);
-                //System.debug(pbEntry);
             }
         }
         insert standartPBEntries;
