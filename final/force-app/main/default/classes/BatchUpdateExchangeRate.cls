@@ -1,31 +1,33 @@
 global class BatchUpdateExchangeRate implements Database.Batchable<sObject>,
     Schedulable, Database.AllowsCallouts, Database.Stateful {
 
+    private List<PricebookEntry> originalPriceList;
+    public List<PricebookEntry> getOriginalPriceList(){return originalPriceList;}
+
     global Database.QueryLocator start(Database.BatchableContext bc) { 
+        this.originalPriceList = [SELECT Product2Id,UnitPrice
+                                  FROM PricebookEntry
+                                  WHERE CurrencyIsoCode='USD'
+                                  AND Pricebook2.Name = 'LADA Cars Price Book'];
         return Database.getQueryLocator(
-            [SELECT Id,Product2Id,CurrencyIsoCode,UnitPrice
-            FROM PricebookEntry
-            WHERE Pricebook2.Name = 'LADA Cars Price Book'
-            AND CurrencyIsoCode = 'USD']);
-                                        // 'SELECT Id,Product2Id,CurrencyIsoCode,UnitPrice'+
-                                        // 'FROM PricebookEntry'+
-                                        // 'WHERE Pricebook2Id = "01s5j00000GRjGZAA1"'+
-                                        // 'AND CurrencyIsoCode = "BYR"');
-    }
+                                  [SELECT Id,Product2Id,CurrencyIsoCode,UnitPrice
+                                   FROM PricebookEntry
+                                   WHERE Pricebook2.Name = 'LADA Cars Price Book']);
+   }
     
-    global void execute(Database.BatchableContext bc, List<PricebookEntry> pbe){		
+    global void execute(Database.BatchableContext bc, List<PricebookEntry> pbeList){		
         List<PricebookEntry> updateList = new List<PricebookEntry>();
-        for(PricebookEntry pbEntry : pbe){
-            if(pbEntry.CurrencyIsoCode!='BYN'){
-                pbEntry.UnitPrice /= Double.valueOf(Cache.Org.get(CurrencyIsoCode));
+
+        for(PricebookEntry pbEntry : pbeList){
+            if(pbEntry.CurrencyIsoCode!='USD'){
+                pbEntry.UnitPrice = this.getOriginalPrice(pbEntry.Product2Id) * Double.valueOf(Cache.Org.get('USD' + pbEntry.CurrencyIsoCode));
+                updateList.add(pbEntry);
             }
         }
         update updateList;
     }
     
-    global void finish(Database.BatchableContext bc){
-        System.debug('passed');
-    }
+    global void finish(Database.BatchableContext bc){}
     
     global void execute(SchedulableContext ctx) {
         Http http = new Http();
@@ -33,19 +35,47 @@ global class BatchUpdateExchangeRate implements Database.Batchable<sObject>,
         request.setEndpoint('https://api.currencyapi.com/v3/latest?apikey=mZtRwAk3xLwZ24zQdYkY1xDc93twfGIVffrZuhw0');
         request.setMethod('GET');
         request.setTimeout(20000);
-        HttpResponse response = http.send(request); 
-        Map<String,Map<String, Map<String,String>>> responseMap = (Map<String,Map<String, Map<String,String>>>)JSON.deserializeUntyped(response.getBody());
+        try{
+            HttpResponse response = http.send(request); 
+            getProducedBy(response.getBody());
+            Database.executeBatch(this);
+        } catch(Exception e){
+            System.debug('May be next time');
+        }
+    }
 
-        for(String ISOCode : LadaCarController.AVAILABLE_CURRENCY){
-            try{
-                Cache.Org.put(ISOCode, 
-                    Double.valueOf(value.get('Cur_OffitialRate'))*
-                    Double.valueOf(value.get('Cur_Scale')));
-            } catch(Exception e) {
-                System.debug('The following exception has occurred:' + e.getMessage());
-                continue;
+    public void getProducedBy(String jsonStr){
+        Map<String,Object> dataMap;
+        try{
+            dataMap = (Map<String,Object>) JSON.deserializeUntyped(jsonStr);
+        } catch(System.JSONException e){
+            System.debug(loggingLevel.ERROR,'JSON Error');
+            throw e;
+        }
+        if(dataMap.containsKey('data')){
+            Map<String,Object> elementMap = (Map<String,Object>) dataMap.get('data');            
+            for(String ISO : LadaCarController.AVAILABLE_CURRENCY){
+                if(elementMap.containsKey(ISO)){
+                    Map<String,Object> ISOKeyMap = (Map<String,Object>) elementMap.get(ISO);
+                    if(ISOKeyMap.containsKey('value')){
+                        Cache.Org.put('USD'+ISO,/*exchangeRate*/ ISOKeyMap.get('value'));
+                    }
+                }                           
             }
         }
-        Database.executeBatch(this);
+    }
+
+    public Double getOriginalPrice(Id productID){
+        try{
+            for(PricebookEntry pbe : this.originalPriceList){
+                if(pbe.Product2Id == productID){
+                    return Double.valueOf(pbe.UnitPrice);
+                }
+            }
+        } catch(System.NullPointerException e){
+            System.debug(loggingLevel.ERROR,'No products found');
+        }
+        return 0;
     }
 }
+    
