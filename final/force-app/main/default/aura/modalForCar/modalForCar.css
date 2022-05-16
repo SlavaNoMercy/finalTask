@@ -28,6 +28,35 @@ div.slds-m-around_xx-large.cModalForCar button:hover {
     animation: wiggle 2s linear infinite;
 }
 
+div.slds-m-around_xx-large.cModalForCar img {
+  width: 100%;
+  height: auto;
+}
+
+div.slds-m-around_xx-large.cModalForCar 
+ section.slds-modal.slds-fade-in-open div.slds-modal__container 
+ div#modal-content-id-1.slds-modal__content.slds-p-around_medium img {
+   
+ }
+
+ @font-face {
+  font-family: myFirstFont;
+  src: url(https://fonts.google.com/specimen/Lobster#standard-styles);
+}
+
+div.slds-m-around_xx-large.cModalForCar div.bottom-price {
+  position: absolute;
+  bottom: 8px;
+  right: 16px;
+  font-size: 16px;
+  color:black;
+  font-family: myFirstFont;
+}
+
+div.slds-m-around_xx-large.cModalForCar div.bottom-price:hover {
+  background-color: azure;
+}
+
 @keyframes wiggle {
   0%, 7% {
     transform: rotateZ(0);

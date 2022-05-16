@@ -6,8 +6,8 @@
 
 div.slds-region_narrow.cProduct {
   display: flex;
-  min-width: 336px;
-  max-width: 515px;
+  width: 100%;
+  height: auto;
   /* width: calc(50% - 40px); */
   flex-wrap: wrap;
   margin: 5px 10px 15px 10px;

@@ -1,4 +1,4 @@
-.THIS.container {
+/* .THIS.container {
   padding: 0px 50px 0px;
   align-items: stretch;
   display: flex;
@@ -6,7 +6,7 @@
   justify-content: space-evenly;
   background-image: linear-gradient(to bottom,white, rgb(170 166 217/50%));
 }
-
+*/
 h1.cProductList.cMain {
   margin: 1em 0 0.5em 0; 
   color: #343434;
@@ -16,4 +16,57 @@ h1.cProductList.cMain {
   line-height: 42px;
   text-transform: uppercase;
   text-align: center;
+} 
+
+div.container.cProductList.cMain {
+  position: relative;
+}
+
+div.container.cProductList.cMain div.slides {
+  display: none;
+  transition-delay: 2s;
+}
+
+div.container.cProductList.cMain div.slides.seeMe {
+  display: block;
+  transition-delay: 2s;
+}
+
+/* 
+.cursor {
+  cursor: pointer;
+} */
+
+div.container.cProductList.cMain a.prev,
+div.container.cProductList.cMain a.next {
+  cursor: pointer;
+  position: absolute;
+  top: 40%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 20px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+div.container.cProductList.cMain a.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+div.container.cProductList.cMain a.prev:hover,
+div.container.cProductList.cMain a.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+div.container.cProductList.cMain div.caption-container {
+  text-align: center;
+  background-color: #222;
+  padding: 2px 16px;
+  color: white;
 }
