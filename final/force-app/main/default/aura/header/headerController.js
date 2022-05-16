@@ -1,39 +1,30 @@
 ({
   doInit: function(component,event,helper) {
-    // helper.selectComponent(component,"home",component.get("v.currentPage"));
-    // console.log('here');
-
-    //helper.mapClasses(component,["home","cars","services","question","testDrive"],"changeMe")
+    
   },
-
   home: function (component, event, helper) {
-    //helper.selectComponent(component,"home",component.get("v.currentPage"));
+    helper.selectComponent(component,"home",component.get("v.currentPage"));
     helper.fireComponentEvent(component, event, "home");
-    event.preventDefault();
-    history.replaceState(null, '', "lada");
+    component.set("v.currentPage","home");
   },
   cars: function (component, event, helper) {
-    //helper.selectComponent(component,"cars",component.get("v.currentPage"));
+    helper.selectComponent(component,"cars",component.get("v.currentPage"));
     helper.fireComponentEvent(component, event, "cars");
-    event.preventDefault();
-    history.replaceState(null, '', "cars");
+    component.set("v.currentPage","cars");
   },
   services: function (component, event, helper) {
-    //helper.selectComponent(component,"services",component.get("v.currentPage"));
+    helper.selectComponent(component,"services",component.get("v.currentPage"));
     helper.fireComponentEvent(component, event, "services");
-    event.preventDefault();
-    history.replaceState(null, '', "services");
+    component.set("v.currentPage","services");
   },
   question: function (component, event, helper) {
-    //helper.selectComponent(component,"question",component.get("v.currentPage"));
+    helper.selectComponent(component,"question",component.get("v.currentPage"));
     helper.fireComponentEvent(component, event, "question");
-    event.preventDefault();
-    history.replaceState(null, '', "question");
+    component.set("v.currentPage","question");
   },
   testDrive: function (component, event, helper) {
-    //helper.selectComponent(component,"testDrive",component.get("v.currentPage"));
+    helper.selectComponent(component,"testDrive",component.get("v.currentPage"));
     helper.fireComponentEvent(component, event, "testDrive");
-    event.preventDefault();
-    history.replaceState(null, '', "testDrive");
+    component.set("v.currentPage","testDrive");
   }
 });

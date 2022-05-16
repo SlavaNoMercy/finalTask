@@ -1,7 +1,48 @@
 <aura:component implements="forceCommunity:availableForAllPageTypes">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"/>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+  <aura:registerEvent name="cmpEvent" type="c:ComponentEvent" />
 
-  <div>
-    <a href="https://github.com/SlavaNoMercy/finalTask/tree/master/final"
-        class="refStyle">Code at Github</a>
-  </div>
+  <div class="footer-dark">
+      <div class="container">
+          <div class="row">
+            <div class="col-md-3 item">
+              <h3>Services</h3>
+              <ul>
+                  <li><a onclick="{! c.topFunction }">Minsk</a></li>
+              </ul>
+            </div>
+            <div class="col-md-3 item">
+              <h3>You can:</h3>
+              <ul>
+                  <li><a onclick="{! c.topFunction }">Chose a Car</a></li>
+                  <li><a onclick="{! c.topFunction }">Ask a Question</a></li>
+                  <li><a onclick="{! c.topFunction }">Order a Test-Drive</a></li>
+              </ul>
+            </div>
+            <div class="col-md-3 item">
+              <h3>Contacts</h3>
+              <ul>
+                  <li><a href="https://slava-nomercy-developer-edition.ap27.force.com/lada">Company</a></li>
+                  <li><a href="tel:+6(66)666-66-66">Phone</a></li>
+                  <li><a href="mailto:lad@ggmail.com">Email</a></li>
+              </ul>
+            </div>
+            <div class="col-md-3 item text">
+              <h3>LADA</h3>
+              <p>The Turtle Wins the Race</p>
+            </div>
+            <div class="col item social">
+              <a href=""><i class="fa fa-facebook"></i></a>
+              <a href=""><i class="fa fa-google"></i></a>
+              <a href=""><i class="fa fa-instagram"></i></a>
+              <a href="https://github.com/SlavaNoMercy/finalTask/tree/remake/final"><i class="fa fa-github"></i></a>
+            </div>
+          </div>
+          <p class="copyright">SlavaNoMercy &copy; 2022</p>
+      </div>
+</div>
 </aura:component>

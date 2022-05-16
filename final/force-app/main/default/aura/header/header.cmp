@@ -8,16 +8,15 @@
   >
     <lightning:layout class="slds-page-header header-title">
       <div class="header-image">
-        <img
-          src="{!$Resource.faviconLada}"
+        <img src="{!$Resource.faviconLada}"
           alt="Responsive image"
-          width="80"
+          width="50"
           height="80"
-        />
+          onclick="{! c.home }"/>
       </div>
     </lightning:layout>
     <lightning:layoutItem padding="around-small">
-      <lightning:button aura:id="home" label="Home" title="Home" onclick="{! c.home }" />
+      <lightning:button aura:id="home" label="Home" title="Home" onclick="{! c.home }" class="changeMe" />
     </lightning:layoutItem>
     <lightning:layoutItem padding="around-small">
       <lightning:button aura:id="cars" label="Cars" title="Cars" onclick="{! c.cars }" />

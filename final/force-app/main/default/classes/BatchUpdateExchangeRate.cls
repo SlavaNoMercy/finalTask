@@ -17,7 +17,6 @@ global class BatchUpdateExchangeRate implements Database.Batchable<sObject>,
     
     global void execute(Database.BatchableContext bc, List<PricebookEntry> pbeList){		
         List<PricebookEntry> updateList = new List<PricebookEntry>();
-
         for(PricebookEntry pbEntry : pbeList){
             if(pbEntry.CurrencyIsoCode!='USD'){
                 pbEntry.UnitPrice = this.getOriginalPrice(pbEntry.Product2Id) * Double.valueOf(Cache.Org.get('USD' + pbEntry.CurrencyIsoCode));
@@ -58,7 +57,7 @@ global class BatchUpdateExchangeRate implements Database.Batchable<sObject>,
                 if(elementMap.containsKey(ISO)){
                     Map<String,Object> ISOKeyMap = (Map<String,Object>) elementMap.get(ISO);
                     if(ISOKeyMap.containsKey('value')){
-                        Cache.Org.put('USD'+ISO,/*exchangeRate*/ ISOKeyMap.get('value'));
+                        Cache.Org.put('USD'+ISO, ISOKeyMap.get('value'));
                     }
                 }                           
             }
