@@ -31,7 +31,7 @@
     </lightning:select>
     
     <p><label for="email">Email<b>*</b></label><input  id="email" maxlength="80" name="email" size="20" type="text" required="true"
-      pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" /></p>
+      pattern="[a-z0-9._%+-]+@[a-z1-9.-]+\.[a-z]{2,}$" /></p>
     
     <p><label for="phone">Phone</label><input  id="phone" maxlength="40" name="phone" size="20" type="text"
       pattern="^([+]39)?((3[\d]{2})([ ,\-,\/]){0,1}([\d, ]{6,9}))|(((0[\d]{1,4}))([ ,\-,\/]){0,1}([\d, ]{5,10}))$" /></p>

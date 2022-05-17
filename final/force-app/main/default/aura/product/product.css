@@ -6,12 +6,11 @@
 
 div.slds-region_narrow.cProduct {
   display: flex;
-  width: 100%;
-  height: auto;
-  /* width: calc(50% - 40px); */
+  width: 1120px;
+  height: 658px;
   flex-wrap: wrap;
-  margin: 5px 10px 15px 10px;
   justify-content: space-between;
+  margin-bottom: 15px;
 }
 
 div.slds-region_narrow.cProduct p {
@@ -24,4 +23,14 @@ div.slds-region_narrow.cProduct p {
   display: flex;
   flex-wrap: wrap;
   text-align: left;
+}
+
+@media only screen and (max-width: 1200px) {
+  /* For mobile phones: */
+  div.slds-region_narrow.cProduct {
+    width: 100%;
+    height: 100%;
+    max-width: 873px;
+    max-height: 453px;
+  }
 }

@@ -1,10 +1,43 @@
 <aura:component implements="forceCommunity:availableForAllPageTypes">
   <aura:registerEvent name="cmpEvent" type="c:ComponentEvent" />
+  <aura:attribute name="currency" type="String" default="USD"/>
   <aura:attribute name="currentPage" type="String" default="home" />
   <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
-  <lightning:layout
+  <div>
+    <div class="header-image">
+      <img src="{!$Resource.faviconLada}"
+        onclick="{! c.home }"/>
+    </div>
+    <div class="navbar notresponsive" aura:id="navigation">
+      <button aura:id="home" onclick="{! c.home }" class="active">Home</button>
+      <button aura:id="cars" onclick="{! c.cars }">Cars</button>
+      <button aura:id="services" onclick="{! c.services }">Services</button>
+      <button aura:id="question" onclick="{! c.question }">Question</button>
+      <button aura:id="testDrive" onclick="{! c.testDrive }">Test-Drive</button>
+      <div class="select">
+        <label>Currency</label>
+        <select aura:id="selected-currency" onchange="{!c.selectCurrency}">
+          <option value="USD" >USD</option>
+          <option value="BYR" >BYR</option>
+          <option value="RUB" >RUB</option>
+          <option value="EUR" >EUR</option>
+        </select>
+      </div>
+      <div class="select">
+        <label>Language</label>
+        <select aura:id="selected-language">
+          <option value="en" onclick="{!c.selectLanguage}">EN</option>
+          <option value="ru" onclick="{!c.selectLanguage}">RU</option>
+        </select>
+      </div>
+      <a href="javascript:void(0);" class="icon" onclick="{!c.applyClasses}">
+        <i class="fa fa-bars"></i></a>
+    </div>
+  </div>
+
+  <!-- <lightning:layout
     pullToBoundary="medium"
-    class="slds-page-header slds-page-header--object-home"
+    class="slds-page-header slds-page-header- -object-home"
   >
     <lightning:layout class="slds-page-header header-title">
       <div class="header-image">
@@ -42,5 +75,15 @@
         onclick="{! c.testDrive }"
       />
     </lightning:layoutItem>
-  </lightning:layout>
+    <lightning:layoutItem padding="around-small" class="currency">
+      <div class="custom-select" style="width:200px;">
+        <select id="selected-currency">
+          <option value="USD" onclick="{!c.click}">USD</option>
+          <option value="BYR" onclick="{!c.click}">BYR</option>
+          <option value="RUB" onclick="{!c.click}">RUB</option>
+          <option value="EUR" onclick="{!c.click}">EUR</option>
+        </select>
+      </div>
+    </lightning:layoutItem>
+  </lightning:layout> -->
 </aura:component>

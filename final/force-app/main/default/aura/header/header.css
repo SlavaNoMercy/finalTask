@@ -2,7 +2,13 @@
   width: max-content;
 }
 
-.cHeader.cMain div.slds-p-around_small button.slds-button.slds-button_neutral.changeMe {
+div.cHeader.cMain div img {
+  width: 80px;
+  height: auto;
+  cursor: pointer;
+}
+
+div.cHeader.cMain div button.active {
   text-decoration: underline;
   color: #000000;
 }
@@ -21,29 +27,128 @@
   background-color: rgb(255, 255, 255);
 }
 
-.cHeader.cMain div.slds-grid.slds-page-header.header-title {
+div.cHeader.cMain div{
   width: fit-content;
+  margin: 30px;
   background-color: #ffffff;
-}
-.cHeader.cMain div.slds-p-around_small {
   display: flex;
-  align-items: center;
+  align-items: baseline;
 }
 
-.cHeader.cMain div.slds-p-around_small button.slds-button.slds-button_neutral {
+div.cHeader.cMain  {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow: hidden;
+  align-items: center;
+  width: 100%;
+}
+
+div.cHeader.cMain div button {
   border: none;
+  outline: none;
   font: medium;
   padding: 3px 15px;
   margin: 15px;
   cursor: pointer;
-  border: 0px;
   background-color: #ffffff;
   font-size: 18px;
   color: #797979;
   box-shadow: 0 0 5px #ffffff;
 }
-.cHeader.cMain
-  div.slds-p-around_small
-  button.slds-button.slds-button_neutral:hover {
+
+div.cHeader.cMain div.navbar.responsive div.select {
+  margin: 0;
+}
+
+div.cHeader.cMain div.navbar.responsive div.select label {
+  margin: 0;
+}
+
+div.cHeader.cMain button:hover {
   color: #000000;
 }
+
+div.cHeader.cMain div div.select{
+  width: 80px;
+  align-items: center;
+  flex-direction: column;
+}
+
+div.cHeader.cMain div div label{
+  font-size: 17px;
+  color: black;
+}
+
+div.cHeader.cMain div div select {
+  border-radius: 0;
+  background-color: #ffffff;
+  font-size: 15px;
+  color: #000000;
+  width: 100%;
+  border: #000000 solid 1px;
+}
+
+div.cHeader.cMain div.navbar.notresponsive {
+  overflow: hidden;
+  right: 0;
+  top: 0;
+  position: absolute;
+}
+
+div.cHeader.cMain div.navbar.notresponsive a {
+  float: left;
+  display: block;
+  color: #000000;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+div.cHeader.cMain div.navbar.notresponsive a.icon {
+  display: none;
+  font-size: 45px;
+  color: black;
+  width: fit-content;
+}
+
+ @media only screen and (max-width: 1100px) {
+  div.cHeader.cMain div.navbar.notresponsive button/*:not(:first-child)*/ {display: none;}
+  div.cHeader.cMain div.navbar.notresponsive button.active:not(:first-child) {display: none;}
+  div.cHeader.cMain div.navbar.notresponsive div/*:not(:first-child)*/ {display: none;}
+  div.cHeader.cMain div.navbar.notresponsive a.icon {
+    float: right;
+    display: block;
+  }
+}
+
+@media only screen and (max-width: 1100px) {
+  div.cHeader.cMain div.navbar.responsive {
+    position: relative;
+    display: block;
+    margin: 0;
+    width: 80%;
+  }
+  div.cHeader.cMain div.header-image{
+    width: 20%;
+    position: relative;
+  }
+  div.cHeader.cMain div.navbar.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-size: 45px;
+    color: black;
+    width: fit-content;
+    margin: 30px;
+    padding: 22px 32px 32px 24px;
+  }
+  div.cHeader.cMain div.navbar.responsive button {
+    float: none;
+    display: block;
+    text-align: left;
+    margin: 0;
+    padding: 0;
+
+  }
+} 

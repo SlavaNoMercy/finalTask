@@ -23,13 +23,7 @@ div.container.cProductList.cMain {
 }
 
 div.container.cProductList.cMain div.slides {
-  display: none;
-  transition-delay: 2s;
-}
-
-div.container.cProductList.cMain div.slides.seeMe {
   display: block;
-  transition-delay: 2s;
 }
 
 /* 
@@ -52,6 +46,7 @@ div.container.cProductList.cMain a.next {
   border-radius: 0 3px 3px 0;
   user-select: none;
   -webkit-user-select: none;
+  margin-right: 15px;
 }
 
 div.container.cProductList.cMain a.next {

@@ -1,11 +1,17 @@
 <aura:component implements="forceCommunity:availableForAllPageTypes">
   <aura:attribute name="renderedCmp" type="String" default="home" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"/>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <aura:handler
     name="cmpEvent"
     event="c:componentEvent"
     action="{!c.handleComponentEvent}"
   />
-  <c:header />
+  <c:header /> 
   <!-- <c:flowComponent /> -->
   <aura:renderIf isTrue="{!v.renderedCmp=='home'}">
     <c:home />

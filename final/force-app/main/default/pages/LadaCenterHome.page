@@ -2,7 +2,7 @@
     <apex:slds />
     <apex:includeLightning />
     <div id='main'>        
-    </div>
+    </div> 
     <script>
         $Lightning.use("c:my", function() {
             $Lightning.createComponent("c:main",
