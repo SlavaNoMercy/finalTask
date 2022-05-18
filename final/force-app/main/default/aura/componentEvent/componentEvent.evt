@@ -1,3 +1,4 @@
 <aura:event type="COMPONENT">
   <aura:attribute name="message" type="String" />
+  <aura:attribute name="language" type="String" />
 </aura:event>

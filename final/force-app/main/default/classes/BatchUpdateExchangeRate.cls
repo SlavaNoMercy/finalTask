@@ -19,7 +19,8 @@ global class BatchUpdateExchangeRate implements Database.Batchable<sObject>,
         List<PricebookEntry> updateList = new List<PricebookEntry>();
         for(PricebookEntry pbEntry : pbeList){
             if(pbEntry.CurrencyIsoCode!='USD'){
-                pbEntry.UnitPrice = this.getOriginalPrice(pbEntry.Product2Id) * Double.valueOf(Cache.Org.get('USD' + pbEntry.CurrencyIsoCode));
+                Decimal decTemp = this.getOriginalPrice(pbEntry.Product2Id) * Double.valueOf(Cache.Org.get('USD' + pbEntry.CurrencyIsoCode));
+                pbEntry.UnitPrice = decTemp.setScale(-2);
                 updateList.add(pbEntry);
             }
         }

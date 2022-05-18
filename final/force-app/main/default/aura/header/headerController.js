@@ -28,17 +28,12 @@
     component.set("v.currentPage","testDrive");
   },
   selectCurrency: function(component,event,helper){
-    console.log(event);
     console.log(event.target.value);
-    console.log(event.data);
-    alert(component.find("selected-currency").value);
+    helper.fireCurrChangeEvent(component,event.target.value);
+    console.log("event fired")
   },
   selectLanguage: function(component,event,helper){
-    console.log(event);
-    console.log(event.target);
-    console.log(event.data);
-    alert(component.find("selected-language").value);
-    console.log(component.find("selected-language").value);
+    console.log(event.target.value);
   },
   applyClasses: function(component,event,helper){
     let navItem = component.find("navigation");

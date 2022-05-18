@@ -1,9 +1,11 @@
 ({
   doInit: function (component, event, helper) {
-    const action = component.get("c.getActualCarList");
+    const action = component.get("c.getCarsList");
+    let currency = component.get("v.currency");
+    console.log(currency);
+    action.setParams({ selectedCurrency : currency });
     action.setCallback(component, function (response) {
       const state = response.getState();
-      //console.log(response);
       if (state === "SUCCESS") { 
         component.set("v.cars", response.getReturnValue());
         console.log(component.get("v.cars"));
@@ -29,5 +31,10 @@
     component.set("v.slideNumber",i);
     console.log(i);
     helper.showSlides(component,i);
+  },
+  handleCapture: function(component,event,helper){
+    console.log("got event, parameter: " + event.getParam("currency"));
+    component.set("v.currency",event.getParam("currency"));
+    $A.enqueueAction(component.get("c.doInit"));
   }
 });

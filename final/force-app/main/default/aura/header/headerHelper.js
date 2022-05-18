@@ -15,5 +15,14 @@
     $A.util.addClass(cmpTarget, 'active');
     console.log('style applied!');
     cmp.set("v.currentPage",cmpName);
+  },
+
+  fireCurrChangeEvent: function(component,currency){
+    let event = $A.get("e.c:currChangeEvent");
+    event.setParams({
+      currency: currency
+    });
+    event.fire();
+    console.log("event fired, parameter: " + currency);
   }
 });

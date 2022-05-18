@@ -20,8 +20,8 @@ public without sharing class LadaCarController {
     }
 
     //@AuraEnabled
-    public static List <PricebookEntry> getCarsByFamily(String family){
-        List<PricebookEntry> products = LadaQueryManager.getCarsListWithPrices('USD');
+    public static List <PricebookEntry> getCarsByFamily(String family, String selectedCurrency){
+        List<PricebookEntry> products = LadaQueryManager.getCarsListWithPrices(selectedCurrency);
         for (Integer i=0;i<products.size();i++){
             if(!products[i].Product2.Family.contains(family)){
                 products.remove(i);

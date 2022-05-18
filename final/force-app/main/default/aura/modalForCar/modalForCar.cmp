@@ -10,7 +10,7 @@
     />
     <!-- <img src="{!$Resource.LadaCenterHome + '/ladaHomePage.jpg'}" onclick="{!c.openModel}" /> -->
     <img src="{!$Resource.LadaCenterHome + v.car.Product2.Product_Image_Link__c}" onclick="{!c.openModel}" class="title-car-img" style="cursor: pointer;" />
-    <div class="bottom-price">{!$Locale.currency + v.car.UnitPrice}</div>
+    <div class="bottom-price">{!v.car.CurrencyIsoCode + v.car.UnitPrice}</div>
     <aura:if isTrue="{!v.isModalOpen}"> 
       <section
         role="dialog"
@@ -45,7 +45,7 @@
             <p>{!v.car.Product2.Description}</p>
             <p>{!v.car.Product2.Equipment__c}</p>
             <img src="{!$Resource.LadaCenterHome + v.car.Product2.Product_Image_Link__c}" class="title-car-img">
-            <div class="bottom-price">{!$Locale.currency + v.car.UnitPrice}</div></img>
+            <div class="bottom-price">{!v.car.CurrencyIsoCode + v.car.UnitPrice}</div></img>
           </div>
           <footer class="slds-modal__footer">
             <lightning:button
