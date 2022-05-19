@@ -23,3 +23,17 @@ header.THIS {
   width: auto;
   flex: 1 0 auto;
 }
+
+.THIS div.siteforceStarterBody div.cCenterPanel.slds-m-top--x-large.slds-p-horizontal--medium {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.THIS div.cCenterPanel.slds-m-top--x-large.slds-p-horizontal--medium
+ div.siteforceSldsOneColLayout.siteforceContentArea 
+ div.slds-col--padded.contentRegion.comm-layout-column {
+  margin: 0;
+  padding: 0;
+  width: 100%;   
+ }

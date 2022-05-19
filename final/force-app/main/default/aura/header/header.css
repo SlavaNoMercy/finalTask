@@ -112,7 +112,7 @@ div.cHeader.cMain div.navbar.notresponsive a.icon {
   width: fit-content;
 }
 
- @media only screen and (max-width: 1100px) {
+ @media only screen and (max-width: 1168px) {
   div.cHeader.cMain div.navbar.notresponsive button/*:not(:first-child)*/ {display: none;}
   div.cHeader.cMain div.navbar.notresponsive button.active:not(:first-child) {display: none;}
   div.cHeader.cMain div.navbar.notresponsive div/*:not(:first-child)*/ {display: none;}
@@ -122,7 +122,7 @@ div.cHeader.cMain div.navbar.notresponsive a.icon {
   }
 }
 
-@media only screen and (max-width: 1100px) {
+@media only screen and (max-width: 1168px) {
   div.cHeader.cMain div.navbar.responsive {
     position: relative;
     display: block;

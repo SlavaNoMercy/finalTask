@@ -10,25 +10,25 @@
       <div class="container">
           <div class="row">
             <div class="col-md-3 item">
-              <h3>Services</h3>
+              <h3>{!$Label.c.Services}</h3>
               <ul>
-                  <li><a onclick="{! c.topFunction }">Minsk</a></li>
+                  <li><a onclick="{! c.topFunction }">{!$Label.c.Minsk}</a></li>
               </ul>
             </div>
             <div class="col-md-3 item">
-              <h3>You can:</h3>
+              <h3>{!$Label.c.You_can}:</h3>
               <ul>
-                  <li><a onclick="{! c.topFunction }">Chose a Car</a></li>
-                  <li><a onclick="{! c.topFunction }">Ask a Question</a></li>
-                  <li><a onclick="{! c.topFunction }">Order a Test-Drive</a></li>
+                  <li><a onclick="{! c.topFunction }">{!$Label.c.Chose_a_Car}</a></li>
+                  <li><a onclick="{! c.topFunctionQ }">{!$Label.c.Question}</a></li>
+                  <li><a onclick="{! c.topFunctionTD }">{!$Label.c.Order_Test_Drive}</a></li>
               </ul>
             </div>
             <div class="col-md-3 item">
-              <h3>Contacts</h3>
+              <h3>{!$Label.c.Contacts}</h3>
               <ul>
-                  <li><a href="https://slava-nomercy-developer-edition.ap27.force.com/lada">Company</a></li>
-                  <li><a href="tel:+6(66)666-66-66">Phone</a></li>
-                  <li><a href="mailto:lad@ggmail.com">Email</a></li>
+                  <li><a href="https://slava-nomercy-developer-edition.ap27.force.com/lada">{!$Label.c.Company}</a></li>
+                  <li><a href="tel:+6(66)666-66-66">{!$Label.c.Phone}</a></li>
+                  <li><a href="mailto:lad@ggmail.com">{!$Label.c.Email}</a></li>
               </ul>
             </div>
             <div class="col-md-3 item text">

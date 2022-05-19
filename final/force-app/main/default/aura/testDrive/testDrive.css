@@ -1,103 +1,115 @@
 form.cTestDrive.cMain {
-  align-self: center;
-  align-items: center;
-  padding: 15px 150px 100px;
-  background-image: linear-gradient(to bottom, white, rgb(240, 240, 240));   
+  box-sizing: border-box;
+  background-image: linear-gradient(to bottom, white, #f2f2f2); 
+  border-radius: 5px;
+  padding: 50px; 
 }
 
 h1.cTestDrive.cMain {
   color:black;
   text-align: center;
-  font-size: 36px; 
+  font-size: 36px;
 }
 
-form.cTestDrive.cMain p {
-  width: 100%;
-  padding: 0px 5px 10px;
-  display: flex;
+span.line.cTestDrive.cMain {
+  width: 75%;
+  height: 2px;
+  background-color: #000000;
+  display: block;
+  margin: 2% auto;
 }
 
-form.cTestDrive.cMain p label {
-  color: black;
-  font-size: 18px;
-  margin: 0;  
-  display: flex;
-  width: 165px;
-  flex-direction: row;
-  font-weight: bold;
-}
 
 form.cTestDrive.cMain b,
-  form.cTestDrive.cMain p b {
+  form.cTestDrive.cMain div div b {
   text-decoration: none;
   font-size: 17px;
   align-self: flex-end;
   color: red;
 }
 
-form.cTestDrive.cMain p input[type=text] {
-  margin-left: 20px;
-  width: max-content;
-  color: black;
-  font-size: 16px;
-  border-radius: 0px;
-  border: 1px solid black;
+form.cTestDrive.cMain div.row {
+  margin-bottom: 20px;
+}
+
+form.cTestDrive.cMain div.row:after {
+  content: "";
   display: table;
-  padding: 4px;
-  width: 250px;
+  clear: both;
 }
 
-form.cTestDrive.cMain div {
-  width: fit-content;
-  padding-left: 5px;
-  margin-top: 5px;
-  padding-bottom: 15px;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-content: flex-end;
+form.cTestDrive.cMain div div.col-25 {
+  float: left;
+  width: 25%;
+  margin-top: 6px;
 }
 
-form.cTestDrive.cMain div label {
-  color: black;
-  font-size: 18px;
-  margin-bottom: 7px;
-  width: 165px;
-  font-weight: bold;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+form.cTestDrive.cMain div div.col-75 {
+  float: left;
+  width: 75%;
+  margin-top: 6px;
 }
 
-form.cTestDrive.cMain div select {
-  color: black;
-  width: fit-content;
-  font-size: 16px;
-  margin-left: 20px;
-  border: 1px solid;
-  border-radius: 0;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;;
-  width: 250px;
+form.cTestDrive.cMain div div input[type=text], 
+ form.cTestDrive.cMain div div select,
+ form.cTestDrive.cMain div div textarea {
+  width: 50%;
+  padding: 12px;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
 }
 
- form.cTestDrive.cMain div div {
-  margin: 0px;
-  padding: 0px;
+form.cTestDrive.cMain div div label {
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+}
+
+form.cTestDrive.cMain input[type=submit] {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 34px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: left;
+}
+
+form.cTestDrive.cMain input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+form.cTestDrive.cMain div div textarea {
+  height: 200px;
+}
+
+form.cTestDrive.cMain div div input,
+ form.cTestDrive.cMain div div select,
+ form.cTestDrive.cMain div div textarea {
+  -webkit-transition: width .35s ease-in-out;
+  transition: width .35s ease-in-out;
+}
+
+form.cTestDrive.cMain div div input:focus, 
+ form.cTestDrive.cMain div div textarea:focus {
+  width: 60%;
 } 
 
-form.cTestDrive.cMain input[type=submit]{
-  margin-top: 50px;
-  border: 1px solid black;
-  border-radius: 3px;
-  font-size: 18px;
-  background-color: #ffffff;
-  color: black;
-  align-self: center;
-  width: fit-content;
-  margin: 30px 30px 10px;
+#email.cTestDrive.cMain,#phone.cTestDrive.cMain:invalid {
+  border-bottom-style: 1px solid rgb(248, 52, 52);
 }
-form.cTestDrive.cMain input[type=submit]:hover {
-  color: rgb(62, 64, 65);
+
+@media only screen and (max-width: 1000px) {
+  form.cTestDrive.cMain div div.col-75,
+   form.cTestDrive.cMain div div.col-25,
+   form.cTestDrive.cMain div div.col-75 select,
+   form.cTestDrive.cMain div div.col-75 textarea,
+   form.cTestDrive.cMain div div.col-75 input,
+   form.cTestDrive.cMain div div.col-25 label,
+    form.cTestDrive.cMain input[type=submit]
+   {
+      width: 100%;
+      margin-top: 0;
+  }
 }

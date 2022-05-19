@@ -4,8 +4,8 @@
   <div class="slds-m-around_xx-large">
     <lightning:button
       variant="neutral"
-      label="Details"
-      title="Details"
+      label="{!$Label.c.Details}"
+      title="{!$Label.c.Details}"
       onclick="{! c.openModel }"
     />
     <!-- <img src="{!$Resource.LadaCenterHome + '/ladaHomePage.jpg'}" onclick="{!c.openModel}" /> -->
@@ -50,14 +50,14 @@
           <footer class="slds-modal__footer">
             <lightning:button
               variant="neutral"
-              label="Cancel"
-              title="Cancel"
+              label="{!$Label.c.Cancel}"
+              title="{!$Label.c.Cancel}"
               onclick="{! c.closeModel }"
             />
             <lightning:button
               variant="brand"
-              label="ViewPDF"
-              title="Veiw PDF"
+              label="{!$Label.c.View_PDF}"
+              title="{!$Label.c.View_PDF}"
               onclick="{!c.submitDetails}"
             />
           </footer>

@@ -7,7 +7,7 @@
   <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
   <!--<aura:attribute name="isModalOpen" type="boolean" default="false" />-->
 
-  <h1>Registration on Test-Drive</h1>
+  <h1>{!$Label.c.RegistrationTestDrive}</h1>
 
   <form action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="POST">
 
@@ -16,30 +16,58 @@
     <input type="hidden" name="00N5j00000FnYcA" value="{!v.selectedValue}" />
     <input type="hidden" name="title" value="Test-Drive" />
     
-    <p>(<b>*</b>)Required field</p>
+    <p>(<b>*</b>){!$Label.c.Required_field}</p>
 
-    <p><label for="first_name">First Name</label><input  id="first_name" maxlength="40" name="first_name" size="20" type="text"
-      pattern="[A-Za-z']{0,40}" /></p>
-    
-    <p><label for="last_name">Last Name<b>*</b></label><input  id="last_name" maxlength="80" name="last_name" size="20" type="text" required="true"
-      pattern="[A-Za-z']{0,80}" /></p>
-    
-    <lightning:select name="carId" label="Product Interest" aura:id="carId" value="{!v.selectedValue}">
-      <aura:iteration items="{!v.options}" var="option">
-          <option text="{!option.Product2.Name}" />
-      </aura:iteration>
-    </lightning:select>
-    
-    <p><label for="email">Email<b>*</b></label><input  id="email" maxlength="80" name="email" size="20" type="text" required="true"
-      pattern="[a-z0-9._%+-]+@[a-z1-9.-]+\.[a-z]{2,}$" /></p>
-    
-    <p><label for="phone">Phone</label><input  id="phone" maxlength="40" name="phone" size="20" type="text"
-      pattern="^([+]39)?((3[\d]{2})([ ,\-,\/]){0,1}([\d, ]{6,9}))|(((0[\d]{1,4}))([ ,\-,\/]){0,1}([\d, ]{5,10}))$" /></p>
-    
-    <input type="submit" name="submit"/>
-    
+    <div class="row">
+      <div class="col-25">
+        <label for="first_name">{!$Label.c.First_Name}</label>
+      </div>
+      <div class="col-75">
+        <input  id="first_name" maxlength="40" name="first_name" size="20" type="text"
+        pattern="[A-Za-z']{0,40}" placeholder="Qwerty"/>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="last_name">{!$Label.c.Last_Name}<b>*</b></label>
+      </div>
+      <div class="col-75">
+        <input  id="last_name" maxlength="80" name="last_name" size="20" type="text" required="true"
+        pattern="[A-Za-z']{0,80}" placeholder="Qwerty" />
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="product">{!$Label.c.Product_Interest}</label>
+      </div>
+      <div class="col-75">
+        <select name="carId" aura:id="carId" value="{!v.selectedValue}">
+          <aura:iteration items="{!v.options}" var="option">
+              <option text="{!option.Product2.Name}" />
+          </aura:iteration>
+        </select>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="email">{!$Label.c.Email}<b>*</b></label>
+      </div>
+      <div class="col-75">
+        <input  id="email" maxlength="80" name="email" size="20" type="text" required="true"
+        pattern="[a-z0-9._%+-]+@[a-z1-9.-]+\.[a-z]{2,}$" placeholder="example@gmail.com" />
+      </div>
+    </div>      
+    <div class="row">
+      <div class="col-25">
+        <label for="phone">{!$Label.c.Phone}</label>
+      </div>
+      <div class="col-75">
+        <input  id="phone" maxlength="40" name="phone" size="20" type="text" placeholder="+666(66)666-66-66"
+        pattern="^([+]39)?((3[\d]{2})([ ,\-,\/]){0,1}([\d, ]{6,9}))|(((0[\d]{1,4}))([ ,\-,\/]){0,1}([\d, ]{5,10}))$" />
+      </div>
+    </div>
+    <input type="submit" name="submit"/>   
     </form>
-
   <!--<div class="slds-m-around_xx-large">
     <lightning:button
       variant="brand"

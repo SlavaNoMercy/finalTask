@@ -2,15 +2,9 @@
   <img src="{!$Resource.LadaCenterHome + '/ladaHomePage.jpg'}" />
   <div class="cmp-container">
     <div>
-      <h2>Niva</h2> 
+      <h2>Niva</h2><br/> 
       <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-        occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-        mollit anim id est laborum.
+        {!$Label.c.Description_Niva}
       </p>
     </div>
     <img src="{!$Resource.LadaCenterHome + '/ladaNiva.jpg'}" />
@@ -18,29 +12,17 @@
   <div class="cmp-container">
     <img src="{!$Resource.LadaCenterHome + '/ladaGranta.jpg'}" />
     <div>
-      <h2>Granta</h2>
+      <h2>Granta</h2><br/>
       <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-        occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-        mollit anim id est laborum.
+        {!$Label.c.Description_Granta}
       </p>
     </div>
   </div>
   <div class="cmp-container">
     <div>
-      <h2>Vesta</h2>
+      <h2>Vesta</h2><br/>
       <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-        occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-        mollit anim id est laborum.
+        {!$Label.c.Description_Vesta}
       </p>
     </div>
     <img src="{!$Resource.LadaCenterHome + '/ladaVesta.jpg'}" />
@@ -48,15 +30,9 @@
   <div class="cmp-container">
     <img src="{!$Resource.LadaCenterHome + '/ladaXRay.jpg'}" />
     <div>
-      <h2>XRay</h2>
+      <h2>XRay</h2><br/>
       <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-        occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-        mollit anim id est laborum.
+        {!$Label.c.Description_XRAY}
       </p>
     </div>
   </div>

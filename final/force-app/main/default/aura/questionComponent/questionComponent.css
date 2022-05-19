@@ -1,8 +1,8 @@
 form.cQuestionComponent.cMain {
-  align-self: center;
-  align-items: center;
-  padding: 15px 150px 100px;
-  background-image: linear-gradient(to bottom, white, rgb(240, 240, 240));   
+  box-sizing: border-box;
+  background-image: linear-gradient(to bottom, white, #f2f2f2); 
+  border-radius: 5px;
+  padding: 50px; 
 }
 
 h1.cQuestionComponent.cMain {
@@ -19,146 +19,107 @@ span.line.cQuestionComponent.cMain {
   margin: 2% auto;
 }
 
- form.cQuestionComponent.cMain div.slds-form-element
- div.slds-form-element__control.slds-grow div.slds-select_container
-  select.slds-select {
-  width: 217px;
-  border-radius: 5px;
-} 
-
 form.cQuestionComponent.cMain b,
-  form.cQuestionComponent.cMain p b {
+  form.cQuestionComponent.cMain div div b {
   text-decoration: none;
   font-size: 17px;
   align-self: flex-end;
   color: red;
 }
 
-form.cQuestionComponent.cMain p {
-  width: 100%;
-  padding: 15px 5px 10px;
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-}
-
-form.cQuestionComponent.cMain p label {
-  color: black;
-  font-size: 18px;
-  margin-left: 4px;
-  display: inline-block;
-  width: 155px;
-  font-weight: bold;
-}
-
-form.cQuestionComponent.cMain p input[type=text] {
-  margin-left: 20px;
-  width: 217px;
-  color: black;
-  font-size: 16px;
-  border: 1px solid black;
-  border-radius: 5px;
+form.cQuestionComponent.cMain div.row:after {
+  content: "";
   display: table;
-  padding: 4px;
-  height: 32px;
+  clear: both;
+}
+
+form.cQuestionComponent.cMain div div.col-25 {
+  float: left;
+  width: 25%;
+  margin-top: 6px;
+}
+
+form.cQuestionComponent.cMain div div.col-75 {
+  float: left;
+  width: 75%;
+  margin-top: 6px;
+}
+
+form.cQuestionComponent.cMain div div input[type=text], 
+ form.cQuestionComponent.cMain div div select,
+ form.cQuestionComponent.cMain div div textarea {
+  width: 50%;
+  padding: 12px;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+
+form.cQuestionComponent.cMain div div label {
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+}
+
+form.cQuestionComponent.cMain input[type=submit] {
+  background-color: #4caf50;
+  color: white;
+  padding: 8px 34px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: left;
+}
+
+form.cQuestionComponent.cMain input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+form.cQuestionComponent.cMain div div textarea {
+  height: 200px;
+}
+
+form.cQuestionComponent.cMain div div input,
+ form.cQuestionComponent.cMain div div select,
+ form.cQuestionComponent.cMain div div textarea {
   -webkit-transition: width .35s ease-in-out;
   transition: width .35s ease-in-out;
 }
 
-form.cQuestionComponent.cMain p input[type=text]:focus{
-  width: 400px;
+form.cQuestionComponent.cMain div div input:focus, 
+ form.cQuestionComponent.cMain div div textarea:focus {
+  width: 60%;
 } 
 
-form.cQuestionComponent.cMain p input.incorrectInput {
-  border: 2px solid red;
-}
-
-
-form.cQuestionComponent.cMain div {
-  width: fit-content;
-  padding-left: 9px;
-  display: flex;
-  flex-direction: row;
-  align-items: self-start;
-  margin-bottom: 20px;
-}
-
-form.cQuestionComponent.cMain div label {
-  color: black;
-  font-size: 18px;
-  margin: 0;  
-  display: flex;
-  width: 155px;
-  flex-direction: row;
-  font-weight: bold;
-
-}
-form.cQuestionComponent.cMain label {
-  color: black;
-  font-size: 18px;
-  margin-left: 25px;
-}
-
-form.cQuestionComponent.cMain select {
-  color: black;
-  width: fit-content;
-  font-size: 16px;
-  margin-left: 24px;
-  display: table;
-  border-radius: 3px;
-  background-color: white;
-}
-
 #email.cQuestionComponent.cMain,#phone.cQuestionComponent.cMain:invalid {
-  border: 1px solid rgb(248, 52, 52);
+  border-bottom-style: 1px solid rgb(248, 52, 52);
 }
 
-form.cQuestionComponent.cMain input{
-  margin-left: 20px;
-  width: max-content;
-  color: black;
-  font-size: 16px;
-  border: 1px solid black;
-  display: table;
-  padding: 4px;
-  height: 32px;
-}
-
-form.cQuestionComponent.cMain textarea {
-  display: table;
-  color: black;
-  font-size: 16px;
-  margin: 0px 0px 0px 20px;
-  width: 450px;
-  height: 200px;
-  border-radius: 5px;
-}
-
-form.cQuestionComponent.cMain div select {
-  color: black;
-  width: fit-content;
-  border-radius: 3px;
-  font-size: 16px;
-  margin-left: 20px;
-  border: 1px solid;;
-}
-
-form.cQuestionComponent.cMain div div {
-  margin: 0px;
-  padding: 0px;
-}
-
-form.cQuestionComponent.cMain input[type=submit]{
+/* form.cQuestionComponent.cMain input[type=submit]{
   margin-top: 50px;
   border: 1px solid black;
-  border-radius: 3px;
   font-size: 18px;
   background-color: #ffffff;
   color: black;
-  align-self: center;
-  width: fit-content;
-  margin: 0px 30px 10px;
+  padding: 12px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  float: right;
 }
 form.cQuestionComponent.cMain input[type=submit]:hover {
   color: rgb(62, 64, 65);
+} */
+
+@media only screen and (max-width: 1000px) {
+  form.cQuestionComponent.cMain div div.col-75,
+   form.cQuestionComponent.cMain div div.col-25,
+   form.cQuestionComponent.cMain div div.col-75 select,
+   form.cQuestionComponent.cMain div div.col-75 textarea,
+   form.cQuestionComponent.cMain div div.col-75 input,
+   form.cQuestionComponent.cMain div div.col-25 label,
+    form.cQuestionComponent.cMain input[type=submit]
+   {
+      width: 100%;
+      margin-top: 0;
+  }
 }

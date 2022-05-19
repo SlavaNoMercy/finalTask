@@ -6,7 +6,7 @@
   <aura:handler event="c:currChangeEvent" action="{!c.handleCapture}"/>
   <aura:handler name="init" action="{!c.doInit}" value="{!this}" />
   <img src="{!$Resource.LadaCenterHome + '/ladaHomePage.jpg'}" />
-  <h1>Lada Car Gallery</h1>
+  <h1>{!$Label.c.Car_Gallery}</h1>
   <div class="container">
     <aura:iteration items="{!v.cars}" var="car" >
       <!-- <div aura:id="{!car.Id}" id="{!car.Id}" class="slides"> -->
