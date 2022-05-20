@@ -1,4 +1,4 @@
-<apex:page controller="LadaCarController" applyHtmlTag="false" showHeader="false" renderAs="pdf">
+<apex:page controller="LadaVFPController" applyHtmlTag="false" showHeader="false" renderAs="pdf" language="en">
     <html>
         <head>
             <style>
@@ -19,9 +19,9 @@
             </style>
         </head>
         <body>
-            <apex:image id="theImage" value="{!$Resource.faviconLada}" width="auto" height="80px" />
+            <apex:image id="theImage" value="{!$Resource.LadaCenterHome + '/ladaHomePage.jpg'}" width="100%" height="auto" />
             <h1>Lada</h1>
-            <apex:repeat value="{!actualCarList}" var="cars" >
+            <apex:repeat value="{!carsByFamily}" var="cars" >
                 <table border="1" cellpadding="7" cellspacing="0">
                     <tr>
                         <th>Model:</th><td>{!cars.Product2.Name}</td>
@@ -30,10 +30,16 @@
                         <th>Complectation:</th><td>{!cars.Product2.Equipment__c}</td>        
                     </tr>
                     <tr>
+                        <th>Family:</th><td>{!cars.Product2.Family}</td>        
+                    </tr>
+                    <tr>
                         <th>Product Code:</th><td>{!cars.Product2.ProductCode}</td>       
                     </tr>
                     <tr>
-                        <th>Description:</th><td>{!cars.Product2.Description}</td>
+                        <th>{!$Label.Description}:</th><td>{!cars.Product2.Description}</td>
+                    </tr>
+                    <tr>
+                        <th>Colors:</th><td>Red,Gray,Black</td>
                     </tr>
                     <tr>
                         <th>Price:</th><th>{!cars.UnitPrice} {!cars.CurrencyIsoCode}</th>

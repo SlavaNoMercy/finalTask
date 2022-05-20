@@ -29,24 +29,12 @@
   },
   selectCurrency: function(component,event,helper){
     console.log(event.target.value);
-    helper.fireCurrChangeEvent(component,event.target.value);
-
+    let currency = event.target.value;
+    helper.fireCurrChangeEvent(component,currency);
     // const action = component.get("c.setNewSelectedCurrency");
-    
-    // console.log(currency);
-    // action.setParams({ selectedCurrency : currency });
-    // action.setCallback(component, function (response) {
-    //   const state = response.getState();
-    //   if (state === "SUCCESS") { 
-    //     component.set("v.cars", response.getReturnValue());
-    //     console.log(component.get("v.cars"));
-    //     helper.showSlides(component,component.get("v.slideNumber"));//
-    //   } else {
-    //     console.log("Failed with state: " + state);
-    //   }
-    // });
+    // action.setParams({ newCurr : currency });
     // $A.enqueueAction(action);
-    // console.log("event fired")
+    // console.log("new currency: "+currency);
   },
   applyClasses: function(component,event,helper){
     let navItem = component.find("navigation");

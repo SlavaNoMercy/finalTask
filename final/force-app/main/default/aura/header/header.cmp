@@ -19,7 +19,7 @@
         <label>{!$Label.c.Currency}</label>
         <select aura:id="selected-currency" onchange="{!c.selectCurrency}">
           <option value="USD" >USD</option>
-          <option value="BYR" >BYR</option>
+          <option value="BYN" >BYN</option>
           <option value="RUB" >RUB</option>
           <option value="EUR" >EUR</option>
         </select>

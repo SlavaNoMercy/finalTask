@@ -2,7 +2,7 @@ global class BatchUpdateExchangeRate implements Database.Batchable<sObject>,
     Schedulable, Database.AllowsCallouts, Database.Stateful {
 
     private List<PricebookEntry> originalPriceList;
-    public List<PricebookEntry> getOriginalPriceList(){return originalPriceList;}
+    @TestVisible private List<PricebookEntry> getOriginalPriceList(){return originalPriceList;}
 
     global Database.QueryLocator start(Database.BatchableContext bc) { 
         this.originalPriceList = [SELECT Product2Id,UnitPrice
@@ -19,8 +19,8 @@ global class BatchUpdateExchangeRate implements Database.Batchable<sObject>,
         List<PricebookEntry> updateList = new List<PricebookEntry>();
         for(PricebookEntry pbEntry : pbeList){
             if(pbEntry.CurrencyIsoCode!='USD'){
-                Decimal decTemp = this.getOriginalPrice(pbEntry.Product2Id) * Double.valueOf(Cache.Org.get('USD' + pbEntry.CurrencyIsoCode));
-                pbEntry.UnitPrice = decTemp.setScale(-2);
+                Decimal decimalExchangeValue = this.getOriginalPrice(pbEntry.Product2Id) * Double.valueOf(Cache.Org.get('USD' + pbEntry.CurrencyIsoCode));
+                pbEntry.UnitPrice = decimalExchangeValue.setScale(-2);
                 updateList.add(pbEntry);
             }
         }
@@ -40,11 +40,11 @@ global class BatchUpdateExchangeRate implements Database.Batchable<sObject>,
             getProducedBy(response.getBody());
             Database.executeBatch(this);
         } catch(Exception e){
-            System.debug('May be next time');
+            System.debug('Can not update currency rates now!');
         }
     }
 
-    public void getProducedBy(String jsonStr){
+    @TestVisible private void getProducedBy(String jsonStr){
         Map<String,Object> dataMap;
         try{
             dataMap = (Map<String,Object>) JSON.deserializeUntyped(jsonStr);
@@ -54,7 +54,7 @@ global class BatchUpdateExchangeRate implements Database.Batchable<sObject>,
         }
         if(dataMap.containsKey('data')){
             Map<String,Object> elementMap = (Map<String,Object>) dataMap.get('data');            
-            for(String ISO : LadaCarController.AVAILABLE_CURRENCY){
+            for(String ISO : LadaConstantsManager.AVAILABLE_CURRENCY){
                 if(elementMap.containsKey(ISO)){
                     Map<String,Object> ISOKeyMap = (Map<String,Object>) elementMap.get(ISO);
                     if(ISOKeyMap.containsKey('value')){
@@ -65,7 +65,7 @@ global class BatchUpdateExchangeRate implements Database.Batchable<sObject>,
         }
     }
 
-    public Double getOriginalPrice(Id productID){
+    @TestVisible private Double getOriginalPrice(Id productID){
         try{
             for(PricebookEntry pbe : this.originalPriceList){
                 if(pbe.Product2Id == productID){

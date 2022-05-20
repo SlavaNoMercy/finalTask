@@ -28,7 +28,7 @@ global with sharing class TestDataFactoryLada implements HttpCalloutMock {
     global HTTPResponse respond(HTTPRequest request) {
         HttpResponse response = new HttpResponse();
         response.setHeader('Content-Type', 'application/json');
-        response.setBody('{"data": {"USD":{"value":1},"BYR":{"value":2.5}, "RUB":{"value":0.01}, "EUR":{"value":0.9}, "UAH":{"value":0.06}}}');
+        response.setBody('{"data": {"USD":{"value":1},"BYN":{"value":2.5}, "RUB":{"value":0.01}, "EUR":{"value":0.9}, "UAH":{"value":0.06}}}');
         response.setStatusCode(200);
         return response;
     } 
