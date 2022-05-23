@@ -5,18 +5,14 @@
   <aura:attribute name="currency" type="String" default="USD"/>
   <aura:handler event="c:currChangeEvent" action="{!c.handleCapture}"/>
   <aura:handler name="init" action="{!c.doInit}" value="{!this}" />
-  <img src="{!$Resource.LadaCenterHome + '/ladaHomePage.jpg'}" />
+  <!-- <img src="{!$Resource.LadaCenterHome + '/ladaHomePage.jpg'}" /> -->
   <h1>{!$Label.c.Car_Gallery}</h1>
+  <span class="line"></span>
   <div class="container">
     <aura:iteration items="{!v.cars}" var="car" >
-      <!-- <div aura:id="{!car.Id}" id="{!car.Id}" class="slides"> -->
       <aura:if isTrue="{! car.slideNumber==v.slideNumber}">  
         <c:product car="{!car}"/>
       </aura:if>
-      <!-- </div> -->
-      <!-- <lightning:layout multipleRows="true" class="layoutBigCardsColumn">
-        <c:product car="{!car}" />
-      </lightning:layout> -->
     </aura:iteration>
     <a class="prev" onclick="{!c.slideMinus}">&#10094;</a>
     <a class="next" onclick="{!c.slidePlus}">&#10095;</a>

@@ -19,4 +19,12 @@ public without sharing class LadaCarController {
         List<PricebookEntry> products = LadaQueryManager.getCarsListWithPrices('USD');
         return products;
     }
+
+    @AuraEnabled
+    public static String selectProductFamily(String newFamily){
+        FamilyName__c settingObjectFamily = FamilyName__c.getOrgDefaults();
+        settingObjectFamily.Family__c = newFamily;
+        update settingObjectFamily;
+        return settingObjectFamily.Family__c;
+    }
 }

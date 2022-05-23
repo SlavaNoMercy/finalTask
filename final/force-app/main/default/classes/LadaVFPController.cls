@@ -3,8 +3,8 @@ public without sharing class LadaVFPController {
         FamilyName__c settingObjectFamily = FamilyName__c.getOrgDefaults();
         CurrencyName_Iso__c settingObjectCurrency = CurrencyName_Iso__c.getOrgDefaults();
         List<PricebookEntry> products = LadaQueryManager.getCarsListWithPrices(settingObjectCurrency.Selected_Currency__c);
-        for (Integer i=0;i<products.size();i++){
-            if(products[i].Product2.Family.contains(settingObjectFamily.Family__c)){
+        for (Integer i = (products.size()-1) ; i>= 0 ; i--){
+            if(products[i].Product2.Family != settingObjectFamily.Family__c){
                 products.remove(i);
             }
         }

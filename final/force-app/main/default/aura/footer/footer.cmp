@@ -12,22 +12,22 @@
             <div class="col-md-3 item">
               <h3>{!$Label.c.Services}</h3>
               <ul>
-                  <li><a onclick="{! c.topFunction }">{!$Label.c.Minsk}</a></li>
+                  <li><a onclick="{! c.moveServices }">{!$Label.c.Minsk}</a></li>
               </ul>
             </div>
             <div class="col-md-3 item">
               <h3>{!$Label.c.You_can}:</h3>
               <ul>
-                  <li><a onclick="{! c.topFunction }">{!$Label.c.Chose_a_Car}</a></li>
-                  <li><a onclick="{! c.topFunctionQ }">{!$Label.c.Question}</a></li>
-                  <li><a onclick="{! c.topFunctionTD }">{!$Label.c.Order_Test_Drive}</a></li>
+                  <li><a onclick="{! c.moveCars }">{!$Label.c.Chose_a_Car}</a></li>
+                  <li><a onclick="{! c.moveQuestion }">{!$Label.c.Question}</a></li>
+                  <li><a onclick="{! c.moveTestDrive }">{!$Label.c.Order_Test_Drive}</a></li>
               </ul>
             </div>
             <div class="col-md-3 item">
               <h3>{!$Label.c.Contacts}</h3>
               <ul>
                   <li><a href="https://slava-nomercy-developer-edition.ap27.force.com/lada">{!$Label.c.Company}</a></li>
-                  <li><a href="tel:+6(66)666-66-66">{!$Label.c.Phone}</a></li>
+                  <li><a href="tel:+6(66)666-66-66">{!$Label.c.Phone_Call}</a></li>
                   <li><a href="mailto:lad@ggmail.com">{!$Label.c.Email}</a></li>
               </ul>
             </div>

@@ -28,7 +28,7 @@
     <img src="{!$Resource.LadaCenterHome + '/ladaVesta.jpg'}" />
   </div>
   <div class="cmp-container">
-    <img src="{!$Resource.LadaCenterHome + '/ladaXRay.jpg'}" />
+    <img src="{!$Resource.LadaCenterHome + '/ladaXRAY.jpg'}" />
     <div>
       <h2>XRay</h2><br/>
       <p>

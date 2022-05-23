@@ -1,31 +1,37 @@
-.THIS {
-}
-
-.THIS.left-side-bar {
-  border: 1px solid #d8dde6;
-  margin: 0px 0 0px 0;
-  width: 100%;
-  align-items: left;
-  align-self: left;
-}
-
-.THIS.right-side-bar {
-  border: 1px solid #d8dde6;
-  margin: 0px 0 0px 0;
-  width: 400px;
-  height: 400px;
-  align-items: right;
-  align-self: right;
-}
-
-.THIS.custom-box {
+h1.cServices.cMain {
+  color:black;
   text-align: center;
-  padding: 1rem;
-  border: 1px solid #d8dde6;
-  border-radius: 25px;
+  font-size: 36px;
 }
 
-.THIS.title {
-  font-size: larger;
-  font-weight: 900;
+div.container.cServices.cMain {
+  display: flex;
+  box-sizing: border-box;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: 50px;
+  padding: 34px;
+  max-width: -moz-available;
+  max-width: -webkit-available;
+  text-align: left;
+  justify-content: center;
+}
+
+div.container.cServices.cMain div.item {
+  max-width: 400px;
+  padding: 10px;
+  border: 1px solid saddlebrown;
+}
+
+div.container.cServices.cMain div.item p span.fa {
+  color: gold;
+}
+
+span.line.cServices.cMain {
+  width: 80%;
+  height: 2px;
+  background-color: #000000;
+  display: block;
+  margin: 2% auto;
 }

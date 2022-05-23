@@ -9,6 +9,8 @@
 
   <h1>{!$Label.c.RegistrationTestDrive}</h1>
 
+  <span class="line"></span>
+
   <form action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="POST">
 
     <input type="hidden" name="oid" value="00D5j00000AHFVr"/>
@@ -66,7 +68,7 @@
         pattern="^([+]39)?((3[\d]{2})([ ,\-,\/]){0,1}([\d, ]{6,9}))|(((0[\d]{1,4}))([ ,\-,\/]){0,1}([\d, ]{5,10}))$" />
       </div>
     </div>
-    <input type="submit" name="submit"/>   
+    <input type="submit" name="submit" label="{!$Label.c.Submit}"/>   
     </form>
   <!--<div class="slds-m-around_xx-large">
     <lightning:button

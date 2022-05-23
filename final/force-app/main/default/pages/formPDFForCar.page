@@ -1,20 +1,25 @@
-<apex:page controller="LadaVFPController" applyHtmlTag="false" showHeader="false" renderAs="pdf" language="en">
+<apex:page controller="LadaVFPController" applyHtmlTag="false" showHeader="false" renderAs="pdf" language="{!$CurrentPage.parameters.language}">
     <html>
         <head>
             <style>
+                body { 
+                    font-family: 'Arial Unicode MS'; 
+                }
                 h1 {
-                text-align: center;    
+                    text-align: center;    
                 }
                 td {
-                text-align: left;
-                width: max-content; 
+                    text-align: left;
+                    width: 75%; 
                 }
                 th {
-                width: 20%;
+                    width: 25%;
+                    font-weight: bold;
                 }
                 table {
-                width: 100%;
-                margin-bottom: 30px;
+                    width: 100%;
+                    margin-bottom: 30px;
+                    -fs-table-paginate: paginate;
                 }           
             </style>
         </head>
@@ -24,25 +29,29 @@
             <apex:repeat value="{!carsByFamily}" var="cars" >
                 <table border="1" cellpadding="7" cellspacing="0">
                     <tr>
-                        <th>Model:</th><td>{!cars.Product2.Name}</td>
+                        <th>{!$Label.Model}:</th><td>{!cars.Product2.Name}</td>
                     </tr>
                     <tr>
-                        <th>Complectation:</th><td>{!cars.Product2.Equipment__c}</td>        
+                        <th>{!$Label.Equipment}:</th><td>{!cars.Product2.Equipment__c}</td>        
                     </tr>
                     <tr>
-                        <th>Family:</th><td>{!cars.Product2.Family}</td>        
+                        <th>{!$Label.Family}:</th><td>{!cars.Product2.Family}</td>        
                     </tr>
                     <tr>
-                        <th>Product Code:</th><td>{!cars.Product2.ProductCode}</td>       
+                        <th>{!$Label.Product_Code}:</th><td>{!cars.Product2.ProductCode}</td>       
                     </tr>
                     <tr>
                         <th>{!$Label.Description}:</th><td>{!cars.Product2.Description}</td>
                     </tr>
                     <tr>
-                        <th>Colors:</th><td>Red,Gray,Black</td>
+                        <th>{!$Label.Image}:</th><td><apex:image id="theImage" value="{!$Resource.LadaCenterHome + cars.Product2.Product_Image_Link__c}" 
+                            width="100%" height="auto" /></td>       
                     </tr>
                     <tr>
-                        <th>Price:</th><th>{!cars.UnitPrice} {!cars.CurrencyIsoCode}</th>
+                        <th>{!$Label.Colors}:</th><td>Red,Gray,Black</td>
+                    </tr>
+                    <tr>
+                        <th>{!$Label.Price}:</th><th>{!cars.UnitPrice} {!cars.CurrencyIsoCode}</th>
                     </tr>                    
                 </table>
             </apex:repeat>

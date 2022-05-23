@@ -1,4 +1,6 @@
-<aura:component  implements="force:appHostable,force:lightningQuickActionWithoutHeader,forceCommunity:availableForAllPageTypes" access="global">
+<aura:component controller="LadaCarController" 
+ implements="force:appHostable,force:lightningQuickActionWithoutHeader,forceCommunity:availableForAllPageTypes" 
+ access="global">
   <aura:attribute name="isModalOpen" type="boolean" default="false" />
   <aura:attribute name="car" type="PricebookEntry" />
   <div class="slds-m-around_xx-large">

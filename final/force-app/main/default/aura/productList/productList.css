@@ -65,3 +65,17 @@ div.container.cProductList.cMain div.caption-container {
   padding: 2px 16px;
   color: white;
 }
+
+span.line.cProductList.cMain {
+  width: 75%;
+  height: 2px;
+  background-color: #000000;
+  display: block;
+  margin: 2% auto;
+}
+
+@media (max-width: 576px) {
+  div.container.cProductList.cMain , div.container-sm.cProductList.cMain {
+    max-width: 570px;
+  }
+}
