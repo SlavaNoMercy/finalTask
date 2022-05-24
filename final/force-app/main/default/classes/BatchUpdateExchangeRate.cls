@@ -1,7 +1,7 @@
 global class BatchUpdateExchangeRate implements Database.Batchable<sObject>,
     Schedulable, Database.AllowsCallouts, Database.Stateful {
 
-    private List<PricebookEntry> originalPriceList;
+    @TestVisible private List<PricebookEntry> originalPriceList;
     @TestVisible private List<PricebookEntry> getOriginalPriceList(){return originalPriceList;}
 
     global Database.QueryLocator start(Database.BatchableContext bc) { 
@@ -45,13 +45,7 @@ global class BatchUpdateExchangeRate implements Database.Batchable<sObject>,
     }
 
     @TestVisible private void getProducedBy(String jsonStr){
-        Map<String,Object> dataMap;
-        try{
-            dataMap = (Map<String,Object>) JSON.deserializeUntyped(jsonStr);
-        } catch(System.JSONException e){
-            System.debug(loggingLevel.ERROR,'JSON Error');
-            throw e;
-        }
+        Map<String,Object> dataMap = (Map<String,Object>) JSON.deserializeUntyped(jsonStr);
         if(dataMap.containsKey('data')){
             Map<String,Object> elementMap = (Map<String,Object>) dataMap.get('data');            
             for(String ISO : LadaConstantsManager.AVAILABLE_CURRENCY){

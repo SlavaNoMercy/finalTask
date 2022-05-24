@@ -31,7 +31,8 @@
   },
 
   doInit: function (component, event, helper) {
-    let action = component.get("c.getActualCarList");
+    let action = component.get("c.getCarsList");
+    action.setParams({selectedCurrency:'illegal value!!!'});
     action.setCallback(this, function (response) {
       let state = response.getState();
       //console.log(response);

@@ -18,7 +18,7 @@ div.cmp-container.cHome.cMain img {
   display: flex;
   flex-wrap: wrap;
   width: 515px;
-  height: 290px;
+  max-height: 300px;
   transform: none;
 }
 

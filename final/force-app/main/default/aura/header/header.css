@@ -58,6 +58,7 @@ div.cHeader.cMain div button {
 
 div.cHeader.cMain div.navbar.responsive div.select {
   margin: 0;
+  align-items: left;
 }
 
 div.cHeader.cMain div.navbar.responsive div.select label {
@@ -70,12 +71,16 @@ div.cHeader.cMain button:hover {
 
 div.cHeader.cMain div div.select{
   width: 80px;
-  align-items: center;
+  align-items: left;
   flex-direction: column;
 }
 
 div.cHeader.cMain div div label{
   font-size: 17px;
+  color: #797979;
+}
+
+div.cHeader.cMain div div label:hover{
   color: black;
 }
 

@@ -1,5 +1,5 @@
 public without sharing class LadaVFPController {
-    public List <PricebookEntry> getCarsByFamily(){
+    public static List <PricebookEntry> getCarsByFamily(){
         FamilyName__c settingObjectFamily = FamilyName__c.getOrgDefaults();
         CurrencyName_Iso__c settingObjectCurrency = CurrencyName_Iso__c.getOrgDefaults();
         List<PricebookEntry> products = LadaQueryManager.getCarsListWithPrices(settingObjectCurrency.Selected_Currency__c);

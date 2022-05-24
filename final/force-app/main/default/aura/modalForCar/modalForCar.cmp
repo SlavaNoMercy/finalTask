@@ -10,7 +10,6 @@
       title="{!$Label.c.Details}"
       onclick="{! c.openModel }"
     />
-    <!-- <img src="{!$Resource.LadaCenterHome + '/ladaHomePage.jpg'}" onclick="{!c.openModel}" /> -->
     <img src="{!$Resource.LadaCenterHome + v.car.Product2.Product_Image_Link__c}" onclick="{!c.openModel}" class="title-car-img" style="cursor: pointer;" />
     <div class="bottom-price">{!v.car.CurrencyIsoCode + v.car.UnitPrice}</div>
     <aura:if isTrue="{!v.isModalOpen}"> 
@@ -42,12 +41,19 @@
             class="slds-modal__content slds-p-around_medium"
             id="modal-content-id-1"
           >
-            <p>{!v.car.Product2.ProductCode}</p>
-            <p>{!v.car.Product2.Family}</p>
-            <p>{!v.car.Product2.Description}</p>
-            <p>{!v.car.Product2.Equipment__c}</p>
             <img src="{!$Resource.LadaCenterHome + v.car.Product2.Product_Image_Link__c}" class="title-car-img">
             <div class="bottom-price">{!v.car.CurrencyIsoCode + v.car.UnitPrice}</div></img>
+            <span class="line"></span>
+            <p>{!$Label.c.Family}: {!v.car.Product2.Family}</p>
+            <span class="line"></span>
+            <p>{!$Label.c.Description}: {!v.car.Product2.Description}</p>
+            <span class="line"></span>
+            <p>{!$Label.c.Equipment}: {!v.car.Product2.Equipment__c}</p>
+            <span class="line"></span>
+            <p>{!$Label.c.Product_Code}: {!v.car.Product2.ProductCode}</p>
+            <span class="line"></span>
+            <p>{!$Label.c.Price}: {!v.car.CurrencyIsoCode + v.car.UnitPrice}</p>
+            <span class="line"></span>
           </div>
           <footer class="slds-modal__footer">
             <lightning:button

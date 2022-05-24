@@ -9,7 +9,7 @@
   <div class="container">
     <aura:iteration items="{!v.services}" var="service">
       <div class="item">
-        <p>LADA Center {!$Label.c.Minsk}</p>
+        <p class="title">LADA Center {!$Label.c.Minsk}</p>
         <p>{!service.Address__c}</p>
         <p>{!$Label.c.Service_Rating}: 
           <span class="fa fa-star checked"></span>

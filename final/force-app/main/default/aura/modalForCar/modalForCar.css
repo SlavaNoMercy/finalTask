@@ -35,12 +35,39 @@ div.slds-m-around_xx-large.cModalForCar img {
   max-height: 615px;
 }
 
+div.slds-m-around_xx-large.cModalForCar
+ section.slds-modal.slds-fade-in-open div.slds-modal__container
+ footer.slds-modal__footer button.slds-button.slds-button_brand {
+   background-color: white;
+ }
+
+div.slds-m-around_xx-large.cModalForCar
+ section.slds-modal.slds-fade-in-open div.slds-modal__container
+ footer.slds-modal__footer button.slds-button.slds-button_brand:hover {
+  background-color: whitesmoke;
+ }
+
+div.slds-m-around_xx-large.cModalForCar section.slds-modal.slds-fade-in-open
+ div.slds-modal__container header.slds-modal__header button.slds-button.slds-button_icon.slds-modal__close.slds-button_icon-bare.slds-button_icon-inverse
+ lightning-primitive-icon svg.slds-button__icon.slds-button_icon-inverse {
+  color: red;
+ }
+
+div.slds-m-around_xx-large.cModalForCar
+ section.slds-modal.slds-fade-in-open div.slds-modal__container
+ div#modal-content-id-1.slds-modal__content.slds-p-around_medium span.line {
+  height: 1px;
+  background-color: #000000;
+  display: block;
+  margin: 5% auto;
+}
+
 div.slds-m-around_xx-large.cModalForCar div.bottom-price {
   position: absolute;
   bottom: 65px;
   right: 15px;
   font-size: 58px;
-  color: #939393;
+  color: white;
 }
 
 div.slds-m-around_xx-large.cModalForCar div.bottom-price:hover {
